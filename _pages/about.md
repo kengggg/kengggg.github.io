@@ -2,7 +2,10 @@
 layout: page
 title: About
 permalink: /about/
+featured_image: /images/generic/main-cover.jpg
 ---
+
+![](/images/generic/about-image.jpg)
 
 I’m a co-founder of [Opendream][1]. I study computer engineering and public health. [Most of my works][2] are about creating digital tools for health and education. I was active on [Mozilla Firefox][3] and [Open Data community][4].
 Area of interest
