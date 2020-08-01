@@ -7,15 +7,14 @@ featured_image: /images/generic/main-cover.jpg
 
 ![](/images/generic/about-image.jpg)
 
-I’m a co-founder of [Opendream][1]. I study computer engineering and public health. [Most of my works][2] are about creating digital tools for health and education. I was active on [Mozilla Firefox][3] and [Open Data community][4].
-Area of interest
+I study computer engineering and public health and a co-founder of [Opendream][1]. [Most of my works][2] are about creating digital tools for health and education. I was active on [Mozilla Firefox][3] and [Open Data community][4].
+
+### Area of interest
 
 - Participatory disease surveillance
 - Adolescent health
 - Game design
 - Autonomous vehicle
-
-I’m also on [LinkedIn][5] and [Keybase][7].
 
 ## Recent
 
