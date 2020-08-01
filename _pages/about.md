@@ -7,7 +7,7 @@ featured_image: /images/generic/main-cover.jpg
 
 ![](/images/generic/about-image.jpg)
 
-I study computer engineering and public health and a co-founder of [Opendream][1]. [Most of my works][2] are about creating digital tools for health and education. I was active on [Mozilla Firefox][3] and [Open Data community][4].
+I studied computer engineering and public health and a co-founded [Opendream][1]. [Most of my works][2] are about creating digital tools for health and education. I was active on [Mozilla Firefox][3] and [Open Data community][4].
 
 ### Area of interest
 
