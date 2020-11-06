@@ -1,7 +1,7 @@
 ---
 title: 'Commonwealth of Pennsylvania'
 date: 2020-11-06 00:00:00
-featured_image: '/images/blog/20201106/2020-11-06-penn-flag.png'
+featured_image: '/images/blog/20201106/2020-11-06-penn-flag-main-cover.png'
 excerpt: งงมากว่าทำไม ผู้ประกาศ CNN หลายคนพยายามมากที่จะพูดว่า "Commonwelth" of Pennsylvania แทนที่จะเป็น "The State" of Pennsylvania
 ---
 
