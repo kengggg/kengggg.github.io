@@ -7,17 +7,18 @@ featured_image: /images/generic/main-cover.jpg
 
 ![](/images/generic/about-image.jpg)
 
-I studied computer engineering and public health and a co-founded [Opendream][1]. [Most of my works][2] are about creating digital tools for health and education. I was active on [Mozilla Firefox][3] and [Open Data community][4].
+I studied computer engineering and public health and co-founded [Opendream][1]. [Most of my works][2] are about creating digital tools for health and education. I was active on [Mozilla Firefox][3] and [Open Data community][4].
 
 ### Area of interest
 
 - Participatory disease surveillance
-- Adolescent health
 - Game design
 - Autonomous vehicle
+- Open data for democracy
 
 ## Recent
 
+- Sep 2020 - MIT Solve: [2020 Health Security & Pandemics Solver Class][14]
 - Jan 2019 – PBS News Hour: [In Thailand, tracking animal health to prevent outbreaks of human disease][8]
 - Jan 2019 – BBC World Service: [Checking in with the Problem Solvers][9]
 - July 2017 – BBC News: [Thailand’s Disease Detectives][10]
@@ -38,3 +39,4 @@ I studied computer engineering and public health and a co-founded [Opendream][1]
 [11]: https://www.bbc.co.uk/programmes/p057pp7w
 [12]: https://www.researchgate.net/publication/312243761_Digital_functions_in_a_participatory_One_Health_surveillance_initiative_aiming_for_pandemic_averting
 [13]: https://www.researchgate.net/publication/261959492_Participatory_disease_detection_through_digital_volunteerism_how_the_doctorme_application_aims_to_capture_data_for_faster_disease_detection_in_thailand
+[14]: https://solve.mit.edu/articles/meet-the-solver-teams-health-security-pandemics
