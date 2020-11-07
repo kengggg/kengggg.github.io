@@ -1,7 +1,7 @@
 basic_settings:
   site_title: keng.blog
   site_tagline: Random Access Memory.
-  favicon_image: /images/favicon.png
+  favicon_image: /images/favicon.ico
 
 header_settings:
   logo_image: 
