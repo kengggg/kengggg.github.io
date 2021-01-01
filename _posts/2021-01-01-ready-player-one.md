@@ -4,7 +4,7 @@ date: 2021-01-01
 categories: [book]
 tags: [audible]
 featured_image: '/images/blog/20210101/ready-player-one-blog-cover.webp'
-excerpt: ได้ฟังหนังสือจบแล้วดูหนังต่อ เลยได้เปรียบเทียบกันแบบ back-to-back เพื่อที่จะพบว่า Speilberg ทำได้ไม่สุดt
+excerpt: ได้ฟังหนังสือจบแล้วดูหนังต่อ เลยได้เปรียบเทียบกันแบบ back-to-back เพื่อที่จะพบว่า Speilberg ทำได้ไม่สุด
 ---
 
 ## หนังสือ Ready Player One
