@@ -63,6 +63,8 @@ arch -X86_64 bundle update
 arch -X86_64 bundle install
 ```
 
+Everything will work as expected as long as your run them through `arch -X86_64`.
+
 [1]: https://developer.apple.com/documentation/apple_silicon/about_the_rosetta_translation_environment
 [2]: https://brew.sh
 [3]: https://github.com/Homebrew/brew/issues/10152
