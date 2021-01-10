@@ -1,6 +1,6 @@
 site: keng.blog
 
-url: 
+url: https://keng.blog
 baseurl: 
 
 collections:
@@ -49,6 +49,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-sitemap
 
 paginate: 6
 paginate_path: "/blog/page:num/"
