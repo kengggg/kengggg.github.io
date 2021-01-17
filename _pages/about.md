@@ -21,6 +21,7 @@ I studied computer engineering and public health and co-founded [Opendream][1], 
 ## Recent
 
 - Dec 2020 - Thairath Online: [Vote62 กับภารกิจเป็นบันไดเพื่อการมีส่วนร่วมของภาคประชาชน][18]
+- Oct 2020 - APAC Trusted Media Summit 2020: [An Investigative Fact Check Mobile Game][19]
 - Sep 2020 - MIT Solve: [2020 Health Security & Pandemics Solver Class][14]
 - Jan 2019 – PBS News Hour: [In Thailand, tracking animal health to prevent outbreaks of human disease][8]
 - Jan 2019 – BBC World Service: [Checking in with the Problem Solvers][9]
@@ -47,3 +48,4 @@ I studied computer engineering and public health and co-founded [Opendream][1], 
 [16]: https://play.google.com/store/apps/details?id=com.opendream.android.Sabaidee101
 [17]: https://vote62.com
 [18]: https://www.thairath.co.th/lifestyle/tech/1994783
+[19]: https://vimeo.com/480642691
