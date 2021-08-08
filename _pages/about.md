@@ -20,6 +20,8 @@ I studied computer engineering and public health and co-founded [Opendream][1], 
 
 ## Recent
 
+- July 2021 - Bloomberg Businessweek: [The Next Pandemic Could Be Averted With AI, Apps, and Big Data][20]
+- July 2021 - Royal Thai Embassy, London: [Think Globally, Act Locally][21]
 - Dec 2020 - Thairath Online: [Vote62 กับภารกิจเป็นบันไดเพื่อการมีส่วนร่วมของภาคประชาชน][18]
 - Oct 2020 - APAC Trusted Media Summit 2020: [An Investigative Fact Check Mobile Game][19]
 - Sep 2020 - MIT Solve: [2020 Health Security & Pandemics Solver Class][14]
@@ -49,3 +51,5 @@ I studied computer engineering and public health and co-founded [Opendream][1], 
 [17]: https://vote62.com
 [18]: https://www.thairath.co.th/lifestyle/tech/1994783
 [19]: https://vimeo.com/480642691
+[20]: https://www.bloomberg.com/news/articles/2021-07-15/how-to-stop-the-next-pandemic-from-happening-ai-big-data-and-vaccines
+[21]: https://london.thaiembassy.org/en/content/think-globally-act-locally-featuring-prof-lertrak?cate=5d6636c215e39c3bd0006cb9
