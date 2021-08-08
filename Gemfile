@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'jekyll', '4.2.0'
 gem 'jekyll-feed'
 gem "kramdown", ">= 2.3.0"
-gem 'jekyll-sitemap'
+#gem 'jekyll-sitemap'
 
 
 
