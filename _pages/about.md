@@ -19,7 +19,7 @@ I studied computer engineering and public health and co-founded [Opendream][1], 
 - Open data
 
 ## Recent
-
+- September 2021 - MIT Solve Challenge : [Professor Dame Sally Davies and Patipat Keng Susumpow at Solve Challenge Final 2021][22]
 - July 2021 - Bloomberg Businessweek: [The Next Pandemic Could Be Averted With AI, Apps, and Big Data][20]
 - July 2021 - Royal Thai Embassy, London: [Think Globally, Act Locally][21]
 - Dec 2020 - Thairath Online: [Vote62 กับภารกิจเป็นบันไดเพื่อการมีส่วนร่วมของภาคประชาชน][18]
@@ -53,3 +53,4 @@ I studied computer engineering and public health and co-founded [Opendream][1], 
 [19]: https://vimeo.com/480642691
 [20]: https://www.bloomberg.com/news/articles/2021-07-15/how-to-stop-the-next-pandemic-from-happening-ai-big-data-and-vaccines
 [21]: https://london.thaiembassy.org/en/content/think-globally-act-locally-featuring-prof-lertrak?cate=5d6636c215e39c3bd0006cb9
+[22]: https://youtu.be/ha24ulnnDEk
