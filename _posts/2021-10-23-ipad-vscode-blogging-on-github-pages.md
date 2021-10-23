@@ -11,7 +11,7 @@ excerpt: My note on the workflow for updating the Github Pages blog entirely on 
 ![](/images/blog/20211023/20211023-content-cover.webp)
 
 
->TL;DR VS Code + Github Pages is great. iPad hardware is good. iPadOS cripples everything.
+_TL;DR VS Code + Github Pages is great. iPad hardware is good. iPadOS cripples everything._
 
 My blog's workflow was previously relied on using VS Code on the __computer__ for editing and committing markdown files to Github, which was not conveniently feasible on the iPad. 
 
