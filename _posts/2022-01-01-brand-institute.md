@@ -1,9 +1,9 @@
 ---
 title: 'Brand Institute'
-date: 2022-01-02
+date: 2022-01-01
 featured_image: 
 excerpt: เอเจนซี่ที่เก่งเรื่องการตั้งชื่อยาและผลิตภัณฑ์ทางการแพทย์ โดยเป็นผู้ตั้งชื่อวัคซีน COVID-19 ของบริษัทต่างๆ ให้ถึง 5 บริษัท
-featured_image: '/images/blog/2022-01-02-brand-institute.webp'
+featured_image: '/images/blog/2022-01-01-brand-institute.webp'
 ---
 
 หลายสัปดาห์ก่อนได้ฉีดวัคซีนวัคซีน COVID-19 ของ Pfizer-BioNTech แล้วเห็นชื่อในหมอพร้อมว่า Cominarty อ่านแล้วเท่มาก เลยไป[ค้นดู][1]แล้วพบว่า ที่มาของชื่อนั้นเท่มากและเบื้องหลังของการตั้งชื่อคือเอเจนซี่ที่ชื่อว่า [Brand Institute][2] (BI) ที่กินตลาดการตั้งชื่อยามากกว่า 75%
