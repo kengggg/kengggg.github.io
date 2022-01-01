@@ -5,7 +5,6 @@ categories: [world]
 tags: [japan, politics]
 featured_image: '/images/blog/20210808/2021-08-08-japanese-comunist-party-cover.webp'
 excerpt: ทำความรู้จักกับพรรคคอมมิวนิสต์ที่อยู่ในประเทศที่ปกครองด้วยระบอบประชาธิปไตยที่ใหญ่ที่สุดในโลก
-
 ---
 
 ![](/images/blog/20210808/2021-08-08-japanese-comunist-party-content-image.webp)

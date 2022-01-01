@@ -5,7 +5,6 @@ categories: [world]
 tags: [taiwan, history]
 featured_image: '/images/blog/20210117/2021-01-17-taiwan-main-cover.webp'
 excerpt: วันก่อนเกิดอยากรู้ประวัติศาสตร์ไต้หวันขึ้นมา ไปไล่อ่านแล้วก็พบว่าตัวเองรู้น้อยและเข้าใจผิดอีกต่างหาก เลยสรุปเก็บไว้อ้างอิงเอง
-
 ---
 
 ![](/images/blog/20210117/2021-01-17-taiwan-content-image.webp)

@@ -5,7 +5,6 @@ categories: [blog]
 tags: [github, ipad, vscode]
 featured_image: '/images/blog/20211023/20211023-main-cover.webp'
 excerpt: My note on the workflow for updating the Github Pages blog entirely on iPad.
-
 ---
 
 ![](/images/blog/20211023/20211023-content-cover.webp)
