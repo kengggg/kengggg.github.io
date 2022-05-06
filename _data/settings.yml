@@ -60,8 +60,8 @@ color_settings:
 
 font_settings:
   font_embed: '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;600&display=swap" rel="stylesheet">'
-  title_font: '"IBM Plex Sans Thai Looped","Merriweather", sans-serif'
-  body_font: '"IBM Plex Sans Thai Looped","Muli", sans-serif'
+  title_font: '"Thonburi","IBM Plex Sans Thai Looped","Merriweather", sans-serif'
+  body_font: '"Thonburi","IBM Plex Sans Thai Looped","Muli", sans-serif'
   regular_weight: 400
   bold_weight: 600
   site_title:
