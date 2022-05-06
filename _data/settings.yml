@@ -60,8 +60,8 @@ color_settings:
 
 font_settings:
   font_embed: '<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;600&display=swap" rel="stylesheet">'
-  title_font: '"Bai Jamjuree","Merriweather", sans-serif'
-  body_font: '"Bai Jamjuree","Muli", sans-serif'
+  title_font: '"Noto Serif Thai","Merriweather", sans-serif'
+  body_font: '"Noto Serif Thai","Muli", sans-serif'
   regular_weight: 400
   bold_weight: 600
   site_title:
