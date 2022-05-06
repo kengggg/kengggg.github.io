@@ -59,7 +59,7 @@ color_settings:
   error_color: '#D64541'
 
 font_settings:
-  font_embed: '<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap" rel="stylesheet">'
+  font_embed: '<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;600&display=swap" rel="stylesheet">'
   title_font: '"Bai Jamjuree","Merriweather", sans-serif'
   body_font: '"Bai Jamjuree","Muli", sans-serif'
   regular_weight: 400
