@@ -61,7 +61,7 @@ color_settings:
 font_settings:
   font_embed: '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;600&display=swap" rel="stylesheet">'
   title_font: '"IBM Plex Sans Thai Looped","Merriweather", sans-serif'
-  body_font: '"Thonburi Light","IBM Plex Sans Thai Looped","Muli", sans-serif'
+  body_font: '"Thonburi","IBM Plex Sans Thai Looped","Muli", sans-serif'
   regular_weight: 400
   bold_weight: 600
   site_title:
@@ -129,7 +129,7 @@ font_settings:
     small_size: 16
     medium_size: 18
     large_size: 20
-    weight: 400
+    weight: 300
     letter_spacing: 0
     line_height: 1.6
   blockquote:
