@@ -7,7 +7,7 @@ featured_image: /images/generic/main-cover.jpg
 
 ![](/images/generic/about-image.webp)
 
-I studied computer engineering and public health and co-founded [Opendream][1], [Taejai][15], [Sabaidee][16] and [Vote62][17].
+I studied computer engineering, public health and co-founded [Opendream][1], [Taejai][15], [Sabaidee][16] and [Vote62][17].
 
 [Most of my works][2] are about creating digital tools for health and education. I was active on [Mozilla Firefox][3] and [Open Data community][4].
 
@@ -15,10 +15,10 @@ I studied computer engineering and public health and co-founded [Opendream][1], 
 
 - Participatory disease surveillance
 - Game design
-- Autonomous vehicle
 - Open data
 
 ## Recent
+- May 2022 - Thairath Online: [คุยกับทีมนักพัฒนา Politimate เกมตามหาผู้ว่าฯ กทม. ในดวงใจ ด้วยนโยบายที่ตรงกัน][24]
 - November 2021 - The Cloud : [Opendream ธุรกิจพัฒนาเทคโนโลยีแก้ปัญหาสังคม ทั้งข้อมูลโรคระบาด เซฟเซ็กส์ และเฟคนิวส์][23]
 - September 2021 - MIT Solve Challenge : [Professor Dame Sally Davies and Patipat Keng Susumpow at Solve Challenge Final 2021][22]
 - July 2021 - Bloomberg Businessweek: [The Next Pandemic Could Be Averted With AI, Apps, and Big Data][20]
@@ -56,3 +56,4 @@ I studied computer engineering and public health and co-founded [Opendream][1], 
 [21]: https://london.thaiembassy.org/en/content/think-globally-act-locally-featuring-prof-lertrak?cate=5d6636c215e39c3bd0006cb9
 [22]: https://youtu.be/ha24ulnnDEk
 [23]: https://readthecloud.co/opendream/
+[24]: https://www.thairath.co.th/news/politic/2395407
