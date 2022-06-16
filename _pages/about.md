@@ -18,8 +18,8 @@ I studied computer engineering, public health and co-founded [Opendream][1], [Ta
 - Open data
 
 ## Recent
-- June 2022 - The Standard: [https://thestandard.co/thailand-election-pain-points/][27]
-- June 2022 - The Matter: [https://thematter.co/social/opendream-interview/177510][26]
+- June 2022 - The Standard: [ส่องปัญหา ‘ข้อมูลเปิด’ กับการเลือกตั้ง: ไม่ใช่แค่ ‘เลขไทย’ โจทย์หิน ทำอย่างไรให้ข้อมูลใช้ ‘ง่าย’ กว่านี้?][27]
+- June 2022 - The Matter: [ขยายส่วนร่วมประชาธิปไตย ด้วยเครื่องมือดิจิทัล ไปกับ Opendream][26]
 - May 2022 - Matichon Online: [เปิดใจเจ้าของแคมเปญ ‘เลิกใช้เลขไทยในเอกสารราชการ’ เหตุเกิดจากเลือกผู้ว่าฯ กทม.][25]
 - May 2022 - Thairath Online: [คุยกับทีมนักพัฒนา Politimate เกมตามหาผู้ว่าฯ กทม. ในดวงใจ ด้วยนโยบายที่ตรงกัน][24]
 - November 2021 - The Cloud : [Opendream ธุรกิจพัฒนาเทคโนโลยีแก้ปัญหาสังคม ทั้งข้อมูลโรคระบาด เซฟเซ็กส์ และเฟคนิวส์][23]
