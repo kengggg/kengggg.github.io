@@ -18,6 +18,9 @@ I studied computer engineering, public health and co-founded [Opendream][1], [Ta
 - Open data
 
 ## Recent
+- June 2022 - The Standard: [https://thestandard.co/thailand-election-pain-points/][27]
+- June 2022 - The Matter: [https://thematter.co/social/opendream-interview/177510][26]
+- May 2022 - Matichon Online: [เปิดใจเจ้าของแคมเปญ ‘เลิกใช้เลขไทยในเอกสารราชการ’ เหตุเกิดจากเลือกผู้ว่าฯ กทม.][25]
 - May 2022 - Thairath Online: [คุยกับทีมนักพัฒนา Politimate เกมตามหาผู้ว่าฯ กทม. ในดวงใจ ด้วยนโยบายที่ตรงกัน][24]
 - November 2021 - The Cloud : [Opendream ธุรกิจพัฒนาเทคโนโลยีแก้ปัญหาสังคม ทั้งข้อมูลโรคระบาด เซฟเซ็กส์ และเฟคนิวส์][23]
 - September 2021 - MIT Solve Challenge : [Professor Dame Sally Davies and Patipat Keng Susumpow at Solve Challenge Final 2021][22]
@@ -57,3 +60,6 @@ I studied computer engineering, public health and co-founded [Opendream][1], [Ta
 [22]: https://youtu.be/ha24ulnnDEk
 [23]: https://readthecloud.co/opendream/
 [24]: https://www.thairath.co.th/news/politic/2395407
+[25]: https://www.matichon.co.th/social/news_3372561
+[26]: https://thematter.co/social/opendream-interview/177510
+[27]: https://thestandard.co/thailand-election-pain-points/
