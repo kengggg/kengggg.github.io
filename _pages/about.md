@@ -7,7 +7,7 @@ featured_image: /images/generic/main-cover.jpg
 
 ![](/images/generic/about-image.webp)
 
-I studied computer engineering, public health and co-founded [Opendream][1], [Taejai][15], [Sabaidee][16] and [Vote62][17].
+I studied computer engineering, public health and co-founded [Opendream][1], [Taejai][15], [One Health Toolkit][16] and [Vote62][17].
 
 [Most of my works][2] are about creating digital tools for health and education. I was active on [Mozilla Firefox][3] and [Open Data community][4].
 
@@ -18,6 +18,9 @@ I studied computer engineering, public health and co-founded [Opendream][1], [Ta
 - Open data
 
 ## Recent
+- November 2022 - [WHO EIOS GTM 2022][30]: Citizen Engagement Workshop
+- November 2022 - World Forum for Democracy: [Election][29]
+- July 2022 - Gyeonggi Maeul International Conference 2022: [Communities transitioning toward a better future][28]
 - June 2022 - The Standard: [ส่องปัญหา ‘ข้อมูลเปิด’ กับการเลือกตั้ง: ไม่ใช่แค่ ‘เลขไทย’ โจทย์หิน ทำอย่างไรให้ข้อมูลใช้ ‘ง่าย’ กว่านี้?][27]
 - June 2022 - The Matter: [ขยายส่วนร่วมประชาธิปไตย ด้วยเครื่องมือดิจิทัล ไปกับ Opendream][26]
 - May 2022 - Matichon Online: [เปิดใจเจ้าของแคมเปญ ‘เลิกใช้เลขไทยในเอกสารราชการ’ เหตุเกิดจากเลือกผู้ว่าฯ กทม.][25]
@@ -51,7 +54,7 @@ I studied computer engineering, public health and co-founded [Opendream][1], [Ta
 [13]: https://www.researchgate.net/publication/261959492_Participatory_disease_detection_through_digital_volunteerism_how_the_doctorme_application_aims_to_capture_data_for_faster_disease_detection_in_thailand
 [14]: https://solve.mit.edu/articles/meet-the-solver-teams-health-security-pandemics
 [15]: https://taejai.com
-[16]: https://play.google.com/store/apps/details?id=com.opendream.android.Sabaidee101
+[16]: https://onehealthtoolkit.org
 [17]: https://vote62.com
 [18]: https://www.thairath.co.th/lifestyle/tech/1994783
 [19]: https://vimeo.com/480642691
@@ -63,3 +66,6 @@ I studied computer engineering, public health and co-founded [Opendream][1], [Ta
 [25]: https://www.matichon.co.th/social/news_3372561
 [26]: https://thematter.co/social/opendream-interview/177510
 [27]: https://thestandard.co/thailand-election-pain-points/
+[28]: https://week.ggmaeul.or.kr/56
+[29]: https://www.coe.int/en/web/world-forum-democracy/lab-8-2022-elections
+[30]: https://www.who.int/initiatives/eios/global-technical-meeting-2022
