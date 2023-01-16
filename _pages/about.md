@@ -14,8 +14,7 @@ I studied computer engineering, public health and co-founded [Opendream][1], [Ta
 ### Area of interest
 
 - Participatory disease surveillance
-- Game design
-- Open data
+- Open government data
 
 ## Recent
 - November 2022 - [WHO EIOS GTM 2022][30]: Citizen Engagement Workshop
