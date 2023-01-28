@@ -9,7 +9,7 @@ featured_image: /images/generic/main-cover.jpg
 
 I studied computer engineering, public health and co-founded [Opendream][1], [Taejai][15], [One Health Toolkit][16] and [Vote62][17].
 
-[Most of my works][2] are about creating digital tools for health and education. I was active on [Mozilla Firefox][3] and [Open Data community][4].
+[Most of my works][2] are about creating digital tools for health. I was active on [Mozilla Firefox][3] and [Open Data community][4].
 
 ### Area of interest
 
