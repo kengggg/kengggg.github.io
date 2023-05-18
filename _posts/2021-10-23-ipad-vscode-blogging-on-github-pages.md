@@ -10,34 +10,23 @@ excerpt: My note on the workflow for updating the Github Pages blog entirely on 
 ![](/images/blog/20211023/20211023-content-cover.webp)
 
 
-_TL;DR VS Code + Github Pages is great. iPad hardware is good. iPadOS cripples everything._
+_TL;DR The combination of VS Code + GitHub Pages works well for blogging, and while iPad hardware is impressive, iPadOS restrictions hamper efficiency._
 
-My blog's workflow was previously relied on using VS Code on the __computer__ for editing and committing markdown files to Github, which was not conveniently feasible on the iPad. 
+Previously, my blog's workflow relied on using VS Code on a __computer__ to edit and commit markdown files to GitHub. This process was awkward on an iPad.
 
-Now the VS Code is available as a [web][1], it is possible to merge VS Code and Github workflow together on the iPad.
+With the introduction of the [web-based VS Code][1], merging VS Code and GitHub workflows on an iPad has become a reality.
 
 # Content Editing
 
-I can just open vscode.dev, coonect to Github and editing files in my blog's repository. All of my contents were markdown, so I only need a [Markdown Preview Github Styling][2] extension to help me preview the blog content before I push to the repository.
-
-The only drawback of this is, I couldn't use [the local Jekyll][3] to preview the draft contents before pushing to Github. But only markdown preview is enough.
+Using vscode.dev, I can directly connect to GitHub and edit files in my blog's repository. As all my content is in markdown, a [Markdown Preview GitHub Styling extension][2] allows me to preview blog content before pushing it to the repository. However, the inability to use [local Jekyll][3] to preview draft contents remains a drawback.
 
 # Image Editing
 
-On the computer, I used Pixelmator Pro or GIMP to edit the cover images and export them as [WebP][4]. Currently all the program I known as tried was not support exporting my edits to WebP. I'll keep the list updated here:
-- Pixelmator Pro for iPad - _does not support WebP export_
-- Pixelmator Photo - _does not support WebP export_
-- Pixlr - _does not support WebP export_
-
-_Last updated 23/10/2021_
-
-So currently my cover images editing workflow will be, editing -> export to jpeg -> convert to WebP on a random online JPG to WebP converter.
+On a computer, I used Pixelmator Pro or GIMP to edit cover images and export them as [WebP][4]. Yet, none of the programs I've tried on the iPad support this feature. For now, my workflow involves editing, exporting to JPEG, and then converting to WebP using an online converter.
 
 # Publishing to Github Pages
 
-Since VS Code and Github are own by Microsoft, we can expect the harmony between the two. I accidentally close the Safari tab that contain VS Code and the data is still intact. 
-
-The issue is on the iPadOS, which is not designed for the multitasking as I familiar on my computer. It makes adding files to the repository is not as simple as drag-and-drop to the VS Code. I need to _upload_ the file to the destination directory on the VS Code.
+The integration of VS Code and GitHub, both owned by Microsoft, generally works smoothly. Even if I accidentally close the Safari tab running VS Code, my data remains safe. The challenge lies in iPadOS, which lacks efficient multitasking features familiar to computer users, making simple tasks like drag-and-drop file additions to VS Code more complex.
 
 [1]: https://code.visualstudio.com/blogs/2021/10/20/vscode-dev
 [2]: https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles
