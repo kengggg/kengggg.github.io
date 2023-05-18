@@ -7,7 +7,7 @@ featured_image: /images/generic/main-cover.jpg
 
 ![](/images/generic/about-image.webp)
 
-I'm Patipat "Keng" Susumpow, co-founder of Opendream[1], Vote62[17], One Health Toolkit[16], and Taejai[15], focusing on digital solutions for public health and government accountability. Developed systems for disease detection, crowdsourced vote monitoring.
+I'm Patipat "Keng" Susumpow, co-founder of [Opendream][1], [Vote62][17], [One Health Toolkit][16], and [Taejai][15], focusing on digital solutions for public health and government accountability. Developed systems for disease detection, crowdsourced vote monitoring.
 
 ### Area of interest
 
