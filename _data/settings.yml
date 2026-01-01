@@ -1,5 +1,5 @@
 basic_settings:
-  site_title: keng.blog
+  site_title: patipat.org
   site_tagline: Random Access Memory.
   favicon_image: /images/favicon.ico
 
@@ -21,7 +21,7 @@ grid_settings:
 social_settings:
   facebook_url: ''
   twitter_url: 'https://twitter.com/kengggg'
-  instagram_url: 'https://instagram.com/_notkeng'
+  instagram_url: ''
   snapchat_url: ''
   youtube_url: ''
   google-plus_url: ''
