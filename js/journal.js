@@ -80,9 +80,14 @@
 
     images.forEach(src => {
       const img = new Image();
-      img.onload = checkComplete;
-      img.onerror = checkComplete;
       img.src = src;
+      // Fix race condition: check if already cached before attaching handlers
+      if (img.complete) {
+        checkComplete();
+      } else {
+        img.onload = checkComplete;
+        img.onerror = checkComplete;
+      }
     });
   }
 
@@ -114,10 +119,19 @@
   function initAjaxNavigation() {
     if (!isAjaxEnabled) return;
 
+    // Save initial scroll position in history state
+    history.replaceState({
+      path: window.location.pathname,
+      scrollY: window.scrollY
+    }, '');
+
+    // Save scroll position before unload for back/forward cache
+    window.addEventListener('beforeunload', saveScrollPosition);
+
     // Listen for popstate (back/forward buttons)
     window.addEventListener('popstate', (e) => {
       if (e.state) {
-        loadPage(window.location.pathname);
+        loadPage(window.location.pathname, e.state.scrollY);
       }
     });
 
@@ -156,17 +170,31 @@
       // Internal links - AJAX load
       if (!href.includes('http') || href.includes(window.location.hostname)) {
         e.preventDefault();
+        // Save current scroll position before navigating
+        saveScrollPosition();
         navTarget = href;
-        history.pushState({ path: href }, '', href);
+        history.pushState({ path: href, scrollY: 0 }, '', href);
         loadPage(href);
       }
     });
   }
 
   /**
-   * Load page content via fetch
+   * Save current scroll position to history state
    */
-  async function loadPage(url) {
+  function saveScrollPosition() {
+    history.replaceState({
+      path: window.location.pathname,
+      scrollY: window.scrollY
+    }, '');
+  }
+
+  /**
+   * Load page content via fetch
+   * @param {string} url - URL to load
+   * @param {number} [restoreScrollY] - Optional scroll position to restore (for back/forward)
+   */
+  async function loadPage(url, restoreScrollY) {
     document.body.classList.add('loading');
 
     try {
@@ -185,9 +213,6 @@
 
       // Wait for transition
       await new Promise(resolve => setTimeout(resolve, 400));
-
-      // Scroll to top
-      window.scrollTo({ top: 0, behavior: 'instant' });
 
       // Replace content
       const page = document.querySelector('.page');
@@ -212,6 +237,16 @@
 
       // Re-run page functions
       pageFunctions();
+
+      // Restore scroll position (for back/forward) or scroll to top
+      // Delay slightly to ensure content is rendered
+      setTimeout(() => {
+        if (typeof restoreScrollY === 'number') {
+          window.scrollTo({ top: restoreScrollY, behavior: 'instant' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+      }, 50);
 
     } catch (error) {
       console.error('AJAX load failed:', error);
@@ -350,27 +385,56 @@
 
   /**
    * Initialize carousel gallery with CSS scroll-snap
+   * Includes full accessibility support (ARIA, keyboard navigation)
    */
   function initCarousel(gallery, wrap) {
     gallery.classList.add('gallery--carousel');
     wrap.classList.add('carousel');
 
+    // Accessibility: Add carousel semantics
+    gallery.setAttribute('role', 'region');
+    gallery.setAttribute('aria-roledescription', 'carousel');
+    gallery.setAttribute('aria-label', 'Image carousel');
+
     const items = wrap.querySelectorAll('.gallery__item');
     if (items.length === 0) return;
+
+    // Add ARIA attributes to slides
+    items.forEach((item, index) => {
+      item.setAttribute('role', 'group');
+      item.setAttribute('aria-roledescription', 'slide');
+      item.setAttribute('aria-label', `Slide ${index + 1} of ${items.length}`);
+    });
 
     // Create navigation dots
     const dotsContainer = document.createElement('div');
     dotsContainer.className = 'carousel__dots';
+    dotsContainer.setAttribute('role', 'tablist');
+    dotsContainer.setAttribute('aria-label', 'Carousel navigation');
+
+    // Helper function to navigate to a slide
+    const goToSlide = (index) => {
+      const targetIndex = Math.max(0, Math.min(index, items.length - 1));
+      items[targetIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    };
+
+    // Get current slide index
+    const getCurrentIndex = () => {
+      const scrollLeft = wrap.scrollLeft;
+      const itemWidth = items[0].offsetWidth;
+      return Math.round(scrollLeft / itemWidth);
+    };
 
     items.forEach((item, index) => {
       const dot = document.createElement('button');
       dot.className = 'carousel__dot';
+      dot.setAttribute('role', 'tab');
       dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+      dot.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+      dot.setAttribute('tabindex', index === 0 ? '0' : '-1');
       if (index === 0) dot.classList.add('carousel__dot--active');
 
-      dot.addEventListener('click', () => {
-        items[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-      });
+      dot.addEventListener('click', () => goToSlide(index));
 
       dotsContainer.appendChild(dot);
     });
@@ -379,16 +443,46 @@
 
     // Update dots on scroll
     const updateDots = debounce(() => {
-      const scrollLeft = wrap.scrollLeft;
-      const itemWidth = items[0].offsetWidth;
-      const activeIndex = Math.round(scrollLeft / itemWidth);
+      const activeIndex = getCurrentIndex();
 
       dotsContainer.querySelectorAll('.carousel__dot').forEach((dot, i) => {
-        dot.classList.toggle('carousel__dot--active', i === activeIndex);
+        const isActive = i === activeIndex;
+        dot.classList.toggle('carousel__dot--active', isActive);
+        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        dot.setAttribute('tabindex', isActive ? '0' : '-1');
       });
     }, 50);
 
-    wrap.addEventListener('scroll', updateDots);
+    wrap.addEventListener('scroll', updateDots, { passive: true });
+
+    // Keyboard navigation for carousel
+    gallery.addEventListener('keydown', (e) => {
+      const currentIndex = getCurrentIndex();
+
+      switch (e.key) {
+        case 'ArrowLeft':
+        case 'ArrowUp':
+          e.preventDefault();
+          goToSlide(currentIndex - 1);
+          break;
+        case 'ArrowRight':
+        case 'ArrowDown':
+          e.preventDefault();
+          goToSlide(currentIndex + 1);
+          break;
+        case 'Home':
+          e.preventDefault();
+          goToSlide(0);
+          break;
+        case 'End':
+          e.preventDefault();
+          goToSlide(items.length - 1);
+          break;
+      }
+    });
+
+    // Make carousel focusable for keyboard users
+    gallery.setAttribute('tabindex', '0');
 
     // Autoplay with IntersectionObserver
     let autoplayInterval = null;
@@ -396,11 +490,9 @@
     const startAutoplay = () => {
       if (autoplayInterval) return;
       autoplayInterval = setInterval(() => {
-        const scrollLeft = wrap.scrollLeft;
-        const itemWidth = items[0].offsetWidth;
-        const currentIndex = Math.round(scrollLeft / itemWidth);
+        const currentIndex = getCurrentIndex();
         const nextIndex = (currentIndex + 1) % items.length;
-        items[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        goToSlide(nextIndex);
       }, 6000);
     };
 
@@ -410,6 +502,17 @@
         autoplayInterval = null;
       }
     };
+
+    // Pause autoplay on focus/hover for accessibility
+    gallery.addEventListener('mouseenter', stopAutoplay);
+    gallery.addEventListener('focusin', stopAutoplay);
+    gallery.addEventListener('mouseleave', startAutoplay);
+    gallery.addEventListener('focusout', (e) => {
+      // Only restart if focus moves outside the gallery
+      if (!gallery.contains(e.relatedTarget)) {
+        startAutoplay();
+      }
+    });
 
     // Use IntersectionObserver to pause/play when in view
     const observer = new IntersectionObserver((entries) => {
@@ -427,20 +530,72 @@
   }
 
   // ==========================================================================
-  // LIGHTBOX
+  // LIGHTBOX (Accessible Modal)
   // ==========================================================================
 
   let lightboxElement = null;
+  let lightboxTriggerElement = null; // Store element that opened lightbox for focus restoration
+
+  /**
+   * Get all focusable elements within a container
+   */
+  function getFocusableElements(container) {
+    return container.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+  }
+
+  /**
+   * Trap focus within lightbox (accessibility requirement)
+   */
+  function handleLightboxKeydown(e) {
+    if (!lightboxElement?.classList.contains('lightbox--open')) return;
+
+    // Close on Escape
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeLightbox();
+      return;
+    }
+
+    // Focus trap on Tab
+    if (e.key === 'Tab') {
+      const focusableElements = getFocusableElements(lightboxElement);
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        // Shift + Tab: if on first element, wrap to last
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else {
+        // Tab: if on last element, wrap to first
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    }
+  }
 
   function openLightbox(imageSrc) {
+    // Store trigger element for focus restoration
+    lightboxTriggerElement = document.activeElement;
+
     // Create lightbox if it doesn't exist
     if (!lightboxElement) {
       lightboxElement = document.createElement('div');
       lightboxElement.className = 'lightbox';
+      // Accessibility: role="dialog", aria-modal for screen readers
+      lightboxElement.setAttribute('role', 'dialog');
+      lightboxElement.setAttribute('aria-modal', 'true');
+      lightboxElement.setAttribute('aria-label', 'Image lightbox');
       lightboxElement.innerHTML = `
         <div class="lightbox__overlay"></div>
         <div class="lightbox__content">
-          <img class="lightbox__image" src="" alt="">
+          <img class="lightbox__image" src="" alt="Enlarged image">
         </div>
         <button class="lightbox__close" aria-label="Close lightbox">&times;</button>
       `;
@@ -450,12 +605,8 @@
       lightboxElement.querySelector('.lightbox__overlay').addEventListener('click', closeLightbox);
       lightboxElement.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
 
-      // Close on escape
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightboxElement.classList.contains('lightbox--open')) {
-          closeLightbox();
-        }
-      });
+      // Keyboard handling (Escape and focus trap)
+      document.addEventListener('keydown', handleLightboxKeydown);
     }
 
     // Set image and show
@@ -466,6 +617,8 @@
     img.onload = () => {
       lightboxElement.classList.add('lightbox--open');
       document.body.style.overflow = 'hidden';
+      // Move focus to close button for keyboard accessibility
+      lightboxElement.querySelector('.lightbox__close').focus();
     };
   }
 
@@ -473,6 +626,12 @@
     if (!lightboxElement) return;
     lightboxElement.classList.remove('lightbox--open');
     document.body.style.overflow = '';
+
+    // Restore focus to trigger element (accessibility best practice)
+    if (lightboxTriggerElement && typeof lightboxTriggerElement.focus === 'function') {
+      lightboxTriggerElement.focus();
+      lightboxTriggerElement = null;
+    }
   }
 
   // ==========================================================================

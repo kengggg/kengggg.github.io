@@ -43,6 +43,13 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Carousel (CSS Scroll-Snap)
 
 .gallery--carousel {
+	// Accessibility: Focus outline for keyboard navigation
+	outline: none;
+
+	&:focus-visible {
+		outline: 2px solid $accent-color;
+		outline-offset: 4px;
+	}
 
 	.gallery__wrap {
 		display: flex;
@@ -88,7 +95,12 @@
 		background: $text-light-color;
 		@include transition(all 0.2s ease-in-out);
 		cursor: pointer;
-		outline: none;
+
+		// Accessibility: visible focus indicator
+		&:focus-visible {
+			outline: 2px solid $accent-color;
+			outline-offset: 2px;
+		}
 
 		&:hover {
 			background: darken($text-light-color, 10%);
@@ -289,6 +301,13 @@
 
 	&:hover {
 		opacity: 1;
+	}
+
+	// Accessibility: visible focus indicator
+	&:focus-visible {
+		opacity: 1;
+		outline: 2px solid #fff;
+		outline-offset: 2px;
 	}
 }
 
