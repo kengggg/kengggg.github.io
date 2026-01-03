@@ -640,16 +640,56 @@
 
   /**
    * Unwrap images from paragraph tags and add wrapper
+   * Also adds lazy loading for better performance
    */
   function enhanceImages() {
     document.querySelectorAll('.single p > img').forEach(img => {
       const p = img.parentElement;
       const wrapper = document.createElement('div');
       wrapper.className = 'image-wrap';
-      wrapper.appendChild(img.cloneNode(true));
+      const newImg = img.cloneNode(true);
+      // Add native lazy loading
+      newImg.setAttribute('loading', 'lazy');
+      wrapper.appendChild(newImg);
       p.parentNode.insertBefore(wrapper, p);
       p.remove();
     });
+
+    // Add lazy loading to all other images in content area
+    document.querySelectorAll('.single img:not([loading])').forEach(img => {
+      img.setAttribute('loading', 'lazy');
+    });
+
+    // Add lazy loading to blog post featured images
+    document.querySelectorAll('.blog-post__image').forEach(el => {
+      // For background images, we'll use IntersectionObserver
+      if (!el.dataset.lazyLoaded) {
+        lazyLoadBackgroundImage(el);
+      }
+    });
+  }
+
+  /**
+   * Lazy load background images using IntersectionObserver
+   */
+  function lazyLoadBackgroundImage(element) {
+    if (!('IntersectionObserver' in window)) {
+      // Fallback for older browsers - load immediately
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          element.dataset.lazyLoaded = 'true';
+          observer.unobserve(element);
+        }
+      });
+    }, {
+      rootMargin: '200px 0px' // Start loading 200px before visible
+    });
+
+    observer.observe(element);
   }
 
   /**

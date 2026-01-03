@@ -296,6 +296,41 @@ hr {
 
 
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - SVG Icons
+
+// Base icon styles (replaces FontAwesome)
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.125em; // Align with text baseline
+	fill: currentColor; // Inherit text color
+}
+
+// Social icon sizing
+.socials__item__link .icon {
+	width: 18px;
+	height: 18px;
+
+	@include mq(tabletp) {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+// Button icon sizing
+.button .icon {
+	width: 14px;
+	height: 14px;
+
+	@include mq(tabletp) {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Page loading
 
 .page-loader {
