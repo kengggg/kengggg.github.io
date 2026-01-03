@@ -40,16 +40,33 @@
 
 
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Carousel
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Carousel (CSS Scroll-Snap)
 
 .gallery--carousel {
+	// Accessibility: Focus outline for keyboard navigation
+	outline: none;
+
+	&:focus-visible {
+		outline: 2px solid $accent-color;
+		outline-offset: 4px;
+	}
 
 	.gallery__wrap {
+		display: flex;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none; // Firefox
+		-ms-overflow-style: none; // IE/Edge
 
+		&::-webkit-scrollbar {
+			display: none; // Chrome/Safari
+		}
 	}
-	
-	.gallery__item {
 
+	.gallery__item {
+		flex: 0 0 100%;
+		scroll-snap-align: start;
 	}
 
 	.gallery__item__link {
@@ -61,6 +78,40 @@
 
 	}
 
+	// Navigation dots (vanilla JS version)
+	.carousel__dots {
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	.carousel__dot {
+		display: inline-block;
+		margin: 0 3px;
+		width: 12px;
+		height: 12px;
+		padding: 0;
+		border: 0;
+		border-radius: 100%;
+		background: $text-light-color;
+		@include transition(all 0.2s ease-in-out);
+		cursor: pointer;
+
+		// Accessibility: visible focus indicator
+		&:focus-visible {
+			outline: 2px solid $accent-color;
+			outline-offset: 2px;
+		}
+
+		&:hover {
+			background: darken($text-light-color, 10%);
+		}
+
+		&.carousel__dot--active {
+			background: $accent-color;
+		}
+	}
+
+	// Legacy Owl Carousel support (for backwards compatibility)
 	.owl-nav {
 		display: none;
 	}
@@ -90,19 +141,19 @@
 
 
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Grid
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Grid (CSS Columns Masonry)
 
 .gallery--grid {
 
 	.gallery__wrap {
-		margin-left: -$grid-spacing/2;
-		margin-right: -$grid-spacing/2;
+		// CSS Columns for masonry-like layout
+		column-count: 2;
+		column-gap: $grid-spacing;
 	}
-	
+
 	.gallery__item {
-		float: left;
-		width: 50%;
-		padding: $grid-spacing/2;
+		break-inside: avoid;
+		margin-bottom: $grid-spacing;
 	}
 
 	.gallery__item__link {
@@ -112,74 +163,151 @@
 
 	&[data-columns="3"] {
 
-		.gallery__item {
-			width: 33.33%;
+		.gallery__wrap {
+			column-count: 2;
+
+			@include mq(tabletp) {
+				column-count: 3;
+			}
 		}
 	}
 
 	&[data-columns="4"] {
 
-		.gallery__item {
-			width: 33.33%;
-		}
+		.gallery__wrap {
+			column-count: 2;
 
-		@include mq(tabletp) {
+			@include mq(tabletp) {
+				column-count: 3;
+			}
 
-			.gallery__item {
-				width: 25%;
+			@include mq(tabletl) {
+				column-count: 4;
 			}
 		}
 	}
 
 	&[data-columns="5"] {
 
-		.gallery__item {
-			width: 33.33%;
-		}
+		.gallery__wrap {
+			column-count: 2;
 
-		@include mq(tabletp) {
-
-			.gallery__item {
-				width: 25%;
+			@include mq(tabletp) {
+				column-count: 3;
 			}
-		}
 
-		@include mq(tabletl) {
+			@include mq(tabletl) {
+				column-count: 4;
+			}
 
-			.gallery__item {
-				width: 20%;
+			@include mq(laptop) {
+				column-count: 5;
 			}
 		}
 	}
 
 	&[data-columns="6"] {
 
-		.gallery__item {
-			width: 33.33%;
-		}
+		.gallery__wrap {
+			column-count: 2;
 
-		@include mq(tabletp) {
-
-			.gallery__item {
-				width: 25%;
+			@include mq(tabletp) {
+				column-count: 3;
 			}
-		}
 
-		@include mq(tabletl) {
-
-			.gallery__item {
-				width: 20%;
+			@include mq(tabletl) {
+				column-count: 4;
 			}
-		}
 
-		@include mq(laptop) {
-
-			.gallery__item {
-				width: 16.66%;
+			@include mq(laptop) {
+				column-count: 6;
 			}
 		}
 	}
 }
 
 
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Lightbox
+
+.lightbox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
+	opacity: 0;
+	@include transition(all 0.3s ease-in-out);
+}
+
+.lightbox--open {
+	visibility: visible;
+	opacity: 1;
+}
+
+.lightbox__overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.9);
+	cursor: pointer;
+}
+
+.lightbox__content {
+	position: relative;
+	z-index: 1;
+	max-width: 90vw;
+	max-height: 90vh;
+	@include transition(transform 0.3s ease-in-out);
+
+	.lightbox--open & {
+		transform: scale(1);
+	}
+}
+
+.lightbox__image {
+	display: block;
+	max-width: 90vw;
+	max-height: 90vh;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox__close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 2;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #fff;
+	font-size: 36px;
+	line-height: 1;
+	cursor: pointer;
+	opacity: 0.7;
+	@include transition(opacity 0.2s ease-in-out);
+
+	&:hover {
+		opacity: 1;
+	}
+
+	// Accessibility: visible focus indicator
+	&:focus-visible {
+		opacity: 1;
+		outline: 2px solid #fff;
+		outline-offset: 2px;
+	}
+}
 
