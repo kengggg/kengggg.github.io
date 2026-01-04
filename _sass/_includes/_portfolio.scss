@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 // - - - - - - - - - - - - - - - - - -
 
 // Portfolio
@@ -77,7 +79,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: rgba($overlay-background-color, $overlay-opacity);
+	background: var(--overlay-bg-opacity);
 
 	opacity: 0;
 	visibility: hidden;
@@ -89,10 +91,10 @@
 }
 
 .portfolio-item__title {
-	color: $overlay-text-color;
+	color: var(--overlay-text-color);
 }
 
 .portfolio-item__subtitle {
 	margin-top: 5px;
-	color: rgba($overlay-text-color, 0.7);
+	color: var(--overlay-text-color-70);
 }

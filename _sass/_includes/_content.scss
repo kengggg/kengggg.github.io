@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 // - - - - - - - - - - - - - - - - - -
 
 // Single page/post/project
@@ -34,9 +36,9 @@
 			max-width: 70%;
 		}
 	}
-	
+
 	h1 {
-		
+
 		@include mq(tabletp) {
 			white-space: pre-line;
 		}
@@ -44,7 +46,7 @@
 
 	p {
 		margin-top: 5px;
-		color: $text-light-color;
+		color: var(--text-light-color);
 	}
 }
 
@@ -133,8 +135,8 @@
 	}
 
 	p a {
-		font-weight: $bold-weight;
-		border-bottom: 2px solid $accent-color;
+		font-weight: var(--bold-weight);
+		border-bottom: 2px solid var(--accent-color);
 	}
 
 	p .button {
@@ -168,16 +170,16 @@
 		display: block;
 		padding: 0;
 		line-height: 1.5;
-		font-size: $p-small*0.85;
-		line-height: $p-lineheight;
+		font-size: calc(var(--p-small) * 0.85);
+		line-height: var(--p-lineheight);
 		overflow: auto;
 
 		@include mq(tabletp) {
-			font-size: $p-medium*0.85;
+			font-size: calc(var(--p-medium) * 0.85);
 		}
 
 		@include mq(laptop) {
-			font-size: $p-large*0.85;
+			font-size: calc(var(--p-large) * 0.85);
 		}
 
 		.highlight {
@@ -201,23 +203,23 @@
 
 	table {
 		min-width: 600px;
-		border: 2px solid $text-dark-color;
+		border: 2px solid var(--text-dark-color);
 
 		thead {
-			background: $text-dark-color;
-			color: $background-color;
+			background: var(--text-dark-color);
+			color: var(--background-color);
 			text-align: left;
-			font-weight: $bold-weight;
+			font-weight: var(--bold-weight);
 
 			th {
-				font-weight: $bold-weight;
+				font-weight: var(--bold-weight);
 			}
 		}
 
 		th, td {
 			padding: 10px;
-			font-size: $p-small;
-			font-weight: $p-weight;
+			font-size: var(--p-small);
+			font-weight: var(--p-weight);
 
 			@include mq(tabletp) {
 				padding: 15px;
@@ -227,11 +229,11 @@
 				padding: 20px;
 			}
 		}
-		
+
 		tr {
 
 			&:nth-child(2n) {
-				background: $background-alt-color;
+				background: var(--background-alt-color);
 			}
 		}
 	}
@@ -244,14 +246,14 @@
 		border-radius: 100%;
 		border-bottom: none;
 		padding: 1px 3px;
-		background: $background-alt-color;
+		background: var(--background-alt-color);
 		font-size: 10px;
 		text-align: center;
-		color: $text-light-color;
+		color: var(--text-light-color);
 
 		&:hover {
-			background: $text-light-color;
-			color: $background-color;
+			background: var(--text-light-color);
+			color: var(--background-color);
 		}
 	}
 
@@ -285,13 +287,13 @@
 					border-radius: 100%;
 					border-bottom: none;
 					padding: 2px 3px;
-					background: $background-alt-color;
+					background: var(--background-alt-color);
 					font-size: 11px;
-					font-weight: $bold-weight;
+					font-weight: var(--bold-weight);
 					text-align: center;
-					color: $text-light-color;
+					color: var(--text-light-color);
 				}
-				
+
 				p {
 					display: inline;
 					max-width: 100%;
