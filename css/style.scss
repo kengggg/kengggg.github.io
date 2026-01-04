@@ -1,12 +1,22 @@
 ---
 ---
 
-// - - - - - - - - - - Sass Modules
+// - - - - - - - - - - Sass Modules (must come first!)
 @use "sass:color";
 
-// - - - - - - - - - - Foundations
+// - - - - - - - - - - All @use statements must be at the top
 @use "reset";
 @use "plugins";
+@use "basic";
+@use "_includes/header";
+@use "_includes/footer";
+@use "_includes/content";
+@use "_includes/socials";
+@use "_includes/gallery";
+@use "_includes/syntax";
+@use "_includes/contact-form";
+@use "_includes/portfolio";
+@use "_includes/blog";
 
 
 
@@ -165,26 +175,6 @@ $overlay-opacity: {{ site.data.settings.header_settings.overlay_opacity }};
   // Grid
   --grid-spacing: {{ site.data.settings.grid_settings.grid_spacing }}px;
 }
-
-
-
-// - - - - - - - - - - Global styles
-@use "basic";
-
-@use "_includes/header";
-@use "_includes/footer";
-
-@use "_includes/content";
-@use "_includes/socials";
-@use "_includes/gallery";
-@use "_includes/syntax";
-@use "_includes/contact-form";
-
-
-
-// - - - - - - - - - - Section styles
-@use "_includes/portfolio";
-@use "_includes/blog";
 
 blockquote {
     border-left: .25em solid #dfe2e5;
