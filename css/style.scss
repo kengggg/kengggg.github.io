@@ -1,10 +1,12 @@
 ---
 ---
 
+// - - - - - - - - - - Sass Modules
+@use "sass:color";
+
 // - - - - - - - - - - Foundations
-@import "reset";
-@import "mixins";
-@import "plugins";
+@use "reset";
+@use "plugins";
 
 
 
@@ -50,9 +52,9 @@ $overlay-opacity: {{ site.data.settings.header_settings.overlay_opacity }};
   --error-color: #{$error-color};
 
   // Derived colors (pre-computed for CSS usage)
-  --accent-color-hover: #{adjust-hue($accent-color, 15deg)};
-  --text-light-color-darker: #{darken($text-light-color, 10%)};
-  --text-light-color-lighter: #{lighten($text-light-color, 15%)};
+  --accent-color-hover: #{color.adjust($accent-color, $hue: 15deg)};
+  --text-light-color-darker: #{color.adjust($text-light-color, $lightness: -10%)};
+  --text-light-color-lighter: #{color.adjust($text-light-color, $lightness: 15%)};
   --text-dark-color-faded: #{rgba($text-dark-color, 0.2)};
 
   // Overlay colors with opacity
@@ -167,22 +169,22 @@ $overlay-opacity: {{ site.data.settings.header_settings.overlay_opacity }};
 
 
 // - - - - - - - - - - Global styles
-@import "basic";
+@use "basic";
 
-@import "_includes/header";
-@import "_includes/footer";
+@use "_includes/header";
+@use "_includes/footer";
 
-@import "_includes/content";
-@import "_includes/socials";
-@import "_includes/gallery";
-@import "_includes/syntax";
-@import "_includes/contact-form";
+@use "_includes/content";
+@use "_includes/socials";
+@use "_includes/gallery";
+@use "_includes/syntax";
+@use "_includes/contact-form";
 
 
 
 // - - - - - - - - - - Section styles
-@import "_includes/portfolio";
-@import "_includes/blog";
+@use "_includes/portfolio";
+@use "_includes/blog";
 
 blockquote {
     border-left: .25em solid #dfe2e5;
