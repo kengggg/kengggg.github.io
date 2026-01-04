@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // - - - - - - - - - - - - - - - - - -
 
 // Gallery
@@ -103,7 +105,7 @@
 		}
 
 		&:hover {
-			background: darken($text-light-color, 10%);
+			background: color.adjust($text-light-color, $lightness: -10%);
 		}
 
 		&.carousel__dot--active {
