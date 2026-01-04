@@ -1,0 +1,21 @@
+{
+  "name": "patipat-blog",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Personal blog of Patipat Keng Susumpow",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.1",
+    "@astrojs/sitemap": "^3.0.4",
+    "astro": "^4.16.18"
+  },
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}

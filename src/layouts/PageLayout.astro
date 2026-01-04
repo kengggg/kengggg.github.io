@@ -1,0 +1,32 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  featuredImage?: string;
+}
+
+const { title, subtitle, description, featuredImage } = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  featuredImage={featuredImage}
+  type="website"
+>
+  <section class="intro">
+    <div class="wrap">
+      <h1>{title}</h1>
+      {subtitle && <p>{subtitle}</p>}
+    </div>
+  </section>
+
+  <section class="single">
+    <div class="wrap">
+      <slot />
+    </div>
+  </section>
+</BaseLayout>

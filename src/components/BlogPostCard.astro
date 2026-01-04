@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../utils/date';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, date, excerpt, featured_image } = post.data;
+---
+
+<article class="blog-post">
+
+  <div class="blog-post__header">
+    <h2 class="blog-post__title"><a href={`/blog/${post.slug}/`}>{title}</a></h2>
+    <p class="blog-post__subtitle">{formatDate(date)}</p>
+  </div>
+
+  {featured_image && (
+    <a href={`/blog/${post.slug}/`} class="blog-post__image" style={`background-image: url(${featured_image});`}></a>
+  )}
+
+  <div class="blog-post__content">
+    {excerpt && <p>{excerpt}</p>}
+    <p><a href={`/blog/${post.slug}/`} class="button">Read More</a></p>
+  </div>
+
+</article>

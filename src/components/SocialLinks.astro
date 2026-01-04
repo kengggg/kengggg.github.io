@@ -1,0 +1,52 @@
+---
+import { settings } from '../data/settings';
+
+// Map setting keys to icon names
+const socialIcons: Record<string, string> = {
+  twitter_url: 'twitter',
+  github_url: 'github',
+  facebook_url: 'facebook',
+  linkedin_url: 'linkedin',
+  instagram_url: 'instagram',
+  youtube_url: 'youtube',
+  snapchat_url: 'snapchat',
+  vimeo_url: 'vimeo',
+  pinterest_url: 'pinterest',
+  medium_url: 'medium',
+  quora_url: 'quora',
+  amazon_url: 'amazon',
+  apple_url: 'apple',
+  android_url: 'android',
+  tumblr_url: 'tumblr',
+  dribbble_url: 'dribbble',
+  behance_url: 'behance',
+  deviantart_url: 'deviantart',
+  reddit_url: 'reddit',
+  flickr_url: 'flickr',
+  etsy_url: 'etsy',
+  kickstarter_url: 'kickstarter',
+  soundcloud_url: 'soundcloud',
+  spotify_url: 'spotify',
+  bandcamp_url: 'bandcamp',
+};
+
+const socialLinks = Object.entries(settings.social)
+  .filter(([_, url]) => url && url !== '')
+  .map(([key, url]) => ({
+    url: url as string,
+    icon: socialIcons[key] || key.replace('_url', ''),
+    title: key.replace('_url', '').replace('-', ' '),
+  }));
+---
+
+{socialLinks.length > 0 && (
+  <ul class="socials">
+    {socialLinks.map(({ url, icon, title }) => (
+      <li class="socials__item">
+        <a href={url} target="_blank" rel="noopener" class="socials__item__link" title={title}>
+          <svg class="icon" aria-hidden="true"><use href={`#icon-${icon}`}></use></svg>
+        </a>
+      </li>
+    ))}
+  </ul>
+)}

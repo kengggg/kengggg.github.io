@@ -1,0 +1,14 @@
+---
+import { settings } from '../data/settings';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+
+  <div class="footer__copyright">
+    <span>&copy; {currentYear} {settings.basic.site_title}</span>
+    <a href="https://jekyllthemes.io" target="_blank" rel="noopener noreferrer">Jekyll Themes</a>
+  </div>
+
+</footer>

@@ -1,0 +1,37 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { formatDate } from '../utils/date';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    date: Date;
+    excerpt?: string;
+    featured_image?: string;
+    categories?: string[];
+    tags?: string[];
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.excerpt}
+  featuredImage={frontmatter.featured_image}
+  type="article"
+>
+  <section class="intro">
+    <div class="wrap">
+      <h1>{frontmatter.title}</h1>
+      <p>{formatDate(frontmatter.date)}</p>
+    </div>
+  </section>
+
+  <section class="single">
+    <div class="wrap">
+      <slot />
+    </div>
+  </section>
+</BaseLayout>

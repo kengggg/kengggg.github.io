@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPostCard from '../components/BlogPostCard.astro';
+import { POSTS_PER_PAGE } from '../consts';
+
+// Get all blog posts, filter out drafts, and sort by date
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort((a, b) =>
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+// Pagination - first page
+const posts = sortedPosts.slice(0, POSTS_PER_PAGE);
+const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+const hasNextPage = totalPages > 1;
+---
+
+<BaseLayout
+  title="Keng Susumpow"
+  description="Random Access Memory."
+  featuredImage="/images/generic/main-cover.jpg"
+>
+  <section class="blog single">
+    <div class="wrap">
+      {posts.map((post) => (
+        <BlogPostCard post={post} />
+      ))}
+    </div>
+  </section>
+
+  {totalPages > 1 && (
+    <section class="pagination">
+      {hasNextPage && (
+        <div class="pagination__next">
+          <a href="/blog/2/" class="button button--large">
+            <span>Older Posts</span>
+            <svg class="icon" aria-hidden="true"><use href="#icon-angle-right"></use></svg>
+          </a>
+        </div>
+      )}
+    </section>
+  )}
+</BaseLayout>
