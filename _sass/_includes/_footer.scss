@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 // - - - - - - - - - - - - - - - - - -
 
 // Footer
@@ -32,7 +34,7 @@
 .footer__copyright {
 	display: block;
 	font-size: 13px;
-	color: $text-light-color;
+	color: var(--text-light-color);
 
 	@include mq(tabletl) {
 		padding-left: 40px;
@@ -44,11 +46,11 @@
 
 	a {
 		margin-left: 10px;
-		color: $text-light-color;
-		font-weight: $regular-weight;
+		color: var(--text-light-color);
+		font-weight: var(--regular-weight);
 
 		&:hover {
-			color: $text-medium-color;
+			color: var(--text-medium-color);
 		}
 	}
 }

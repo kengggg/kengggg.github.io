@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 // - - - - - - - - - - - - - - - - - -
 
 // Blog
@@ -89,12 +91,12 @@
 }
 
 .blog-post__title {
-	
+
 }
 
 .blog-post__subtitle {
 	margin-top: 5px;
-	color: $text-light-color;
+	color: var(--text-light-color);
 }
 
 .pagination {
@@ -126,10 +128,10 @@
 
 .pagination__prev {
 	float: left;
-	padding-right: calc($grid-spacing / 2);
+	padding-right: calc(var(--grid-spacing) / 2);
 }
 
 .pagination__next {
 	float: right;
-	padding-left: calc($grid-spacing / 2);
+	padding-left: calc(var(--grid-spacing) / 2);
 }

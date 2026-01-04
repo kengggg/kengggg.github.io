@@ -1,4 +1,4 @@
-@use "sass:color";
+@use "mixins" as *;
 
 // - - - - - - - - - - - - - - - - - -
 
@@ -14,12 +14,12 @@ html, body {
 }
 
 body {
-	background: $background-color;
-	font-family: $body-font;
-	font-weight: $regular-weight;
+	background: var(--background-color);
+	font-family: var(--body-font);
+	font-weight: var(--regular-weight);
 	font-style: normal;
 	line-height: 1;
-	color: $text-medium-color;
+	color: var(--text-medium-color);
 }
 
 
@@ -27,8 +27,8 @@ body {
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Typography
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $title-font;
-	color: $text-dark-color;
+	font-family: var(--title-font);
+	color: var(--text-dark-color);
 
 	&:first-child {
 		margin-top: 0;
@@ -36,125 +36,125 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
-	font-size: $h1-small;
-	font-weight: $h1-weight;
-	line-height: $h1-lineheight;
-	letter-spacing: $h1-spacing;
+	font-size: var(--h1-small);
+	font-weight: var(--h1-weight);
+	line-height: var(--h1-lineheight);
+	letter-spacing: var(--h1-spacing);
 
 	@include mq(tabletp) {
-		font-size: $h1-medium;
+		font-size: var(--h1-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $h1-large;
+		font-size: var(--h1-large);
 	}
 
 	a {
-		font-weight: $h1-weight;
+		font-weight: var(--h1-weight);
 	}
 }
 
 h2, .h2 {
 	margin-top: 40px;
-	font-size: $h2-small;
-	font-weight: $h2-weight;
-	line-height: $h2-lineheight;
-	letter-spacing: $h2-spacing;
+	font-size: var(--h2-small);
+	font-weight: var(--h2-weight);
+	line-height: var(--h2-lineheight);
+	letter-spacing: var(--h2-spacing);
 
 	@include mq(tabletp) {
-		font-size: $h2-medium;
+		font-size: var(--h2-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $h2-large;
+		font-size: var(--h2-large);
 	}
 
 	a {
-		font-weight: $h2-weight;
+		font-weight: var(--h2-weight);
 	}
 }
 
 h3, .h3 {
 	margin-top: 40px;
-	font-size: $h3-small;
-	font-weight: $h3-weight;
-	line-height: $h3-lineheight;
-	letter-spacing: $h3-spacing;
+	font-size: var(--h3-small);
+	font-weight: var(--h3-weight);
+	line-height: var(--h3-lineheight);
+	letter-spacing: var(--h3-spacing);
 
 	@include mq(tabletp) {
-		font-size: $h3-medium;
+		font-size: var(--h3-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $h3-large;
+		font-size: var(--h3-large);
 	}
 }
 
 h4, .h4 {
 	margin-top: 25px;
-	font-size: $h4-small;
-	font-weight: $h4-weight;
-	line-height: $h4-lineheight;
-	letter-spacing: $h4-spacing;
+	font-size: var(--h4-small);
+	font-weight: var(--h4-weight);
+	line-height: var(--h4-lineheight);
+	letter-spacing: var(--h4-spacing);
 
 	@include mq(tabletp) {
-		font-size: $h4-medium;
+		font-size: var(--h4-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $h4-large;
+		font-size: var(--h4-large);
 	}
 }
 
 h5, .h5 {
 	margin-top: 15px;
-	font-size: $h5-small;
-	font-weight: $h5-weight;
-	line-height: $h5-lineheight;
-	letter-spacing: $h5-spacing;
+	font-size: var(--h5-small);
+	font-weight: var(--h5-weight);
+	line-height: var(--h5-lineheight);
+	letter-spacing: var(--h5-spacing);
 
 	@include mq(tabletp) {
-		font-size: $h5-medium;
+		font-size: var(--h5-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $h5-large;
+		font-size: var(--h5-large);
 	}
 }
 
 h6, .h6 {
 	margin-top: 15px;
-	font-size: $h6-small;
-	font-weight: $h6-weight;
-	line-height: $h6-lineheight;
-	letter-spacing: $h6-spacing;
+	font-size: var(--h6-small);
+	font-weight: var(--h6-weight);
+	line-height: var(--h6-lineheight);
+	letter-spacing: var(--h6-spacing);
 
 	@include mq(tabletp) {
-		font-size: $h6-medium;
+		font-size: var(--h6-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $h6-large;
+		font-size: var(--h6-large);
 	}
 }
 
 p, ul, ol {
 	margin-top: 15px;
-	font-size: $p-small;
-	font-weight: $p-weight;
-	line-height: $p-lineheight;
-	letter-spacing: $p-spacing;
+	font-size: var(--p-small);
+	font-weight: var(--p-weight);
+	line-height: var(--p-lineheight);
+	letter-spacing: var(--p-spacing);
 
 	@include mq(tabletp) {
-		font-size: $p-medium;
+		font-size: var(--p-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $p-large;
+		font-size: var(--p-large);
 	}
 
 	strong {
-		font-weight: $bold-weight;
+		font-weight: var(--bold-weight);
 	}
 
 	&:first-child {
@@ -168,44 +168,44 @@ ul, ol {
 
 blockquote {
 	margin-top: 15px;
-	font-family: $title-font;
-	font-size: $blockquote-small;
-	font-weight: $blockquote-weight;
-	letter-spacing: $blockquote-spacing;
-	line-height: $blockquote-lineheight;
+	font-family: var(--title-font);
+	font-size: var(--blockquote-small);
+	font-weight: var(--blockquote-weight);
+	letter-spacing: var(--blockquote-spacing);
+	line-height: var(--blockquote-lineheight);
 
 	@include mq(tabletp) {
-		font-size: $blockquote-medium;
+		font-size: var(--blockquote-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $blockquote-large;
+		font-size: var(--blockquote-large);
 	}
 
 	p {
-		font-size: $blockquote-small;
-		font-weight: $blockquote-weight;
-		letter-spacing: $blockquote-spacing;
-		line-height: $blockquote-lineheight;
+		font-size: var(--blockquote-small);
+		font-weight: var(--blockquote-weight);
+		letter-spacing: var(--blockquote-spacing);
+		line-height: var(--blockquote-lineheight);
 
 		@include mq(tabletp) {
-			font-size: $blockquote-medium;
+			font-size: var(--blockquote-medium);
 		}
 
 		@include mq(laptop) {
-			font-size: $blockquote-large;
+			font-size: var(--blockquote-large);
 		}
 	}
 }
 
 a {
 	text-decoration: none;
-	color: $text-dark-color;
-	font-weight: $bold-weight;
+	color: var(--text-dark-color);
+	font-weight: var(--bold-weight);
 	@include transition(all 0.15s ease-in-out);
 
 	&:hover {
-		color: $accent-color;
+		color: var(--accent-color);
 	}
 }
 
@@ -214,12 +214,12 @@ a {
 	padding: 9px 10px 10px;
 	font-size: 13px;
 	line-height: 1;
-	border: 2px solid $accent-color;
+	border: 2px solid var(--accent-color);
 	border-radius: 3px;
-	background: $accent-color;
-	color: $background-color;
-	font-weight: $button-weight;
-	letter-spacing: $button-spacing;
+	background: var(--accent-color);
+	color: var(--background-color);
+	font-weight: var(--button-weight);
+	letter-spacing: var(--button-spacing);
 	cursor: pointer;
 
 	@include mq(tabletp) {
@@ -228,9 +228,9 @@ a {
 	}
 
 	&:hover {
-		background: color.adjust($accent-color, $hue: 15deg);
-		border-color: color.adjust($accent-color, $hue: 15deg);
-		color: $background-color;
+		background: var(--accent-color-hover);
+		border-color: var(--accent-color-hover);
+		color: var(--background-color);
 	}
 
 	svg {
@@ -264,25 +264,25 @@ a {
 
 .button--light {
 	background: transparent;
-	border-color: $text-dark-color;
-	color: $text-dark-color;
+	border-color: var(--text-dark-color);
+	color: var(--text-dark-color);
 
 	&:hover {
-		background: $accent-color;
-		border-color: $accent-color;
-		color: $background-color;
+		background: var(--accent-color);
+		border-color: var(--accent-color);
+		color: var(--background-color);
 	}
 }
 
 .button--overlay {
 	background: transparent;
-	border-color: $overlay-text-color;
-	color: $overlay-text-color;
+	border-color: var(--overlay-text-color);
+	color: var(--overlay-text-color);
 
 	&:hover {
-		background: $overlay-text-color;
-		border-color: $overlay-text-color;
-		color: $accent-color;
+		background: var(--overlay-text-color);
+		border-color: var(--overlay-text-color);
+		color: var(--accent-color);
 	}
 }
 
@@ -290,11 +290,11 @@ hr {
 	margin: 40px 0;
 	border: 0;
 	height: 2px;
-	background: $border-color;
+	background: var(--border-color);
 }
 
-::selection 	 { background: $accent-color; color: $background-color; }
-::-moz-selection { background: $accent-color; color: $background-color; }
+::selection 	 { background: var(--accent-color); color: var(--background-color); }
+::-moz-selection { background: var(--accent-color); color: var(--background-color); }
 
 
 
@@ -387,7 +387,7 @@ body.loading {
 	svg {
 		width: 100%;
 		height: 100%;
-		fill: rgba($text-dark-color,0.2);
+		fill: var(--text-dark-color-faded);
 	}
 }
 
@@ -464,7 +464,7 @@ section {
 	}
 
 	@include mq(laptop) {
-		
+
 	}
 }
 

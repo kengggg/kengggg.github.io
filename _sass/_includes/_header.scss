@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 // - - - - - - - - - - - - - - - - - -
 
 // Header + menu
@@ -10,7 +12,7 @@
 
 .header {
 	padding: 40px 20px;
-	background: $overlay-background-color;
+	background: var(--overlay-background-color);
 
 	@include mq(tabletp) {
 		padding: 80px 40px;
@@ -65,12 +67,10 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background: rgba($overlay-background-color, $overlay-opacity);
+	background: var(--overlay-bg-opacity);
 
 	@include mq(tabletl) {
-		background: -moz-linear-gradient(top, rgba($overlay-background-color, 0) 0%, rgba($overlay-background-color, 0.01) 1%, rgba($overlay-background-color, $overlay-opacity) 70%, rgba($overlay-background-color, $overlay-opacity) 100%);
-		background: -webkit-linear-gradient(top, rgba($overlay-background-color, 0) 0%, rgba($overlay-background-color, 0.01) 1%, rgba($overlay-background-color, $overlay-opacity) 70%, rgba($overlay-background-color, $overlay-opacity) 100%);
-		background: linear-gradient(to bottom, rgba($overlay-background-color, 0) 0%, rgba($overlay-background-color, 0.01) 1%, rgba($overlay-background-color, $overlay-opacity) 70%, rgba($overlay-background-color, $overlay-opacity) 100%);
+		background: linear-gradient(to bottom, transparent 0%, transparent 1%, var(--overlay-bg-opacity) 70%, var(--overlay-bg-opacity) 100%);
 	}
 }
 
@@ -90,7 +90,7 @@
 
 .header__logo {
 	display: block;
-	width: $logo-width;
+	width: var(--logo-width);
 	max-width: 80%;
 
 	@include mq(tabletp) {
@@ -105,41 +105,41 @@
 }
 
 .header__title {
-	font-family: $title-font;
-	font-size: $sitetitle-small;
-	font-weight: $sitetitle-weight;
-	letter-spacing: $sitetitle-spacing;
+	font-family: var(--title-font);
+	font-size: var(--sitetitle-small);
+	font-weight: var(--sitetitle-weight);
+	letter-spacing: var(--sitetitle-spacing);
 	line-height: 1;
-	color: $overlay-text-color;
+	color: var(--overlay-text-color);
 
 	&:hover {
-		color: $overlay-text-color;
+		color: var(--overlay-text-color);
 	}
 
 	@include mq(tabletp) {
-		font-size: $sitetitle-medium;
+		font-size: var(--sitetitle-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $sitetitle-large;
+		font-size: var(--sitetitle-large);
 	}
 }
 
 .header__tagline {
 	margin-top: 10px;
-	font-family: $body-font;
-	font-size: $sitetagline-small;
-	font-weight: $sitetagline-weight;
-	letter-spacing: $sitetagline-spacing;
-	line-height: $sitetagline-lineheight;
-	color: rgba($overlay-text-color, 0.7);
+	font-family: var(--body-font);
+	font-size: var(--sitetagline-small);
+	font-weight: var(--sitetagline-weight);
+	letter-spacing: var(--sitetagline-spacing);
+	line-height: var(--sitetagline-lineheight);
+	color: var(--overlay-text-color-70);
 
 	@include mq(tabletp) {
-		font-size: $sitetagline-medium;
+		font-size: var(--sitetagline-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $sitetagline-large;
+		font-size: var(--sitetagline-large);
 	}
 }
 
@@ -148,7 +148,7 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Menu
 
 .menu {
-	
+
 	@include mq(tabletl) {
 		margin-top: 20px;
 	}
@@ -166,7 +166,7 @@
 	cursor: pointer;
 	font-size: 15px;
 	line-height: 20px;
-	
+
 	@include mq(tabletl) {
 		display: none;
 	}
@@ -187,7 +187,7 @@
 		width: 100%;
 		height: 3px;
 		@include transition(all 0.1s);
-		background: rgba($overlay-text-color, 0.7);
+		background: var(--overlay-text-color-70);
 	}
 
 	span:before {
@@ -202,18 +202,18 @@
 .menu--open .menu__toggle__icon {
 
 	span:before, span:after {
-		background: $overlay-text-color !important;
+		background: var(--overlay-text-color) !important;
 	}
-		
+
 	span {
 		background-color: transparent !important;
 	}
-	
+
 	span:before,
 	span:after {
 		top: 0;
 	}
-	
+
 	span:before {
 		@include rotate(45);
 	}
@@ -230,7 +230,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: rgba($overlay-background-color,0.95);
+	background: var(--overlay-bg-95);
 	overflow: auto;
 
 	visibility: hidden;
@@ -272,26 +272,26 @@
 }
 
 .menu__list__item__link {
-	font-size: $menu-small;
-	font-weight: $menu-weight;
-	color: rgba($overlay-text-color, 0.7);
+	font-size: var(--menu-small);
+	font-weight: var(--menu-weight);
+	color: var(--overlay-text-color-70);
 	padding: 10px 0;
 
 	&:hover {
-		color: $overlay-text-color;
+		color: var(--overlay-text-color);
 	}
 
 	@include mq(tabletl) {
 		padding: 0;
-		font-size: $menu-medium;
+		font-size: var(--menu-medium);
 	}
 
 	@include mq(laptop) {
-		font-size: $menu-large;
+		font-size: var(--menu-large);
 	}
-	
+
 	&.active-link {
-		color: $overlay-text-color;
+		color: var(--overlay-text-color);
 	}
 }
 
@@ -328,12 +328,12 @@
 	}
 
 	.socials__item__link {
-		background: rgba($overlay-text-color, 0.7);
-		color: $overlay-background-color;
+		background: var(--overlay-text-color-70);
+		color: var(--overlay-background-color);
 
 		&:hover {
-			background: $overlay-text-color;
-			color: $overlay-background-color;
+			background: var(--overlay-text-color);
+			color: var(--overlay-background-color);
 		}
 	}
 }
