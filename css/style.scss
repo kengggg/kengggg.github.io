@@ -169,20 +169,20 @@ $overlay-opacity: {{ site.data.settings.header_settings.overlay_opacity }};
 // - - - - - - - - - - Global styles
 @import "basic";
 
-@import "includes/header";
-@import "includes/footer";
+@import "_includes/header";
+@import "_includes/footer";
 
-@import "includes/content";
-@import "includes/socials";
-@import "includes/gallery";
-@import "includes/syntax";
-@import "includes/contact-form";
+@import "_includes/content";
+@import "_includes/socials";
+@import "_includes/gallery";
+@import "_includes/syntax";
+@import "_includes/contact-form";
 
 
 
 // - - - - - - - - - - Section styles
-@import "includes/portfolio";
-@import "includes/blog";
+@import "_includes/portfolio";
+@import "_includes/blog";
 
 blockquote {
     border-left: .25em solid #dfe2e5;
