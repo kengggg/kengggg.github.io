@@ -1,10 +1,4 @@
-# Jekyll (legacy)
-_site/
-.sass-cache/
-.jekyll-cache/
-_drafts/
-
-# Astro
+# Build output
 dist/
 .astro/
 node_modules/
