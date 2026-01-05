@@ -383,49 +383,58 @@
     });
   }
 
-  /**
-   * Initialize carousel gallery with CSS scroll-snap
-   * Includes full accessibility support (ARIA, keyboard navigation)
-   */
-  function initCarousel(gallery, wrap) {
-    gallery.classList.add('gallery--carousel');
-    wrap.classList.add('carousel');
+  // ==========================================================================
+  // CAROUSEL HELPERS (extracted for clarity)
+  // ==========================================================================
 
-    // Accessibility: Add carousel semantics
+  /**
+   * Set up ARIA accessibility attributes for carousel
+   */
+  function setupCarouselAccessibility(gallery, items) {
     gallery.setAttribute('role', 'region');
     gallery.setAttribute('aria-roledescription', 'carousel');
     gallery.setAttribute('aria-label', 'Image carousel');
+    gallery.setAttribute('tabindex', '0');
 
-    const items = wrap.querySelectorAll('.gallery__item');
-    if (items.length === 0) return;
-
-    // Add ARIA attributes to slides
     items.forEach((item, index) => {
       item.setAttribute('role', 'group');
       item.setAttribute('aria-roledescription', 'slide');
       item.setAttribute('aria-label', `Slide ${index + 1} of ${items.length}`);
     });
+  }
 
-    // Create navigation dots
+  /**
+   * Create a carousel controller for navigation and state
+   */
+  function createCarouselController(wrap, items) {
+    return {
+      goToSlide(index) {
+        const targetIndex = Math.max(0, Math.min(index, items.length - 1));
+        items[targetIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      },
+
+      getCurrentIndex() {
+        const scrollLeft = wrap.scrollLeft;
+        const itemWidth = items[0].offsetWidth;
+        return Math.round(scrollLeft / itemWidth);
+      },
+
+      get slideCount() {
+        return items.length;
+      }
+    };
+  }
+
+  /**
+   * Create navigation dots UI for carousel
+   */
+  function createCarouselDots(items, controller) {
     const dotsContainer = document.createElement('div');
     dotsContainer.className = 'carousel__dots';
     dotsContainer.setAttribute('role', 'tablist');
     dotsContainer.setAttribute('aria-label', 'Carousel navigation');
 
-    // Helper function to navigate to a slide
-    const goToSlide = (index) => {
-      const targetIndex = Math.max(0, Math.min(index, items.length - 1));
-      items[targetIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-    };
-
-    // Get current slide index
-    const getCurrentIndex = () => {
-      const scrollLeft = wrap.scrollLeft;
-      const itemWidth = items[0].offsetWidth;
-      return Math.round(scrollLeft / itemWidth);
-    };
-
-    items.forEach((item, index) => {
+    items.forEach((_, index) => {
       const dot = document.createElement('button');
       dot.className = 'carousel__dot';
       dot.setAttribute('role', 'tab');
@@ -434,98 +443,140 @@
       dot.setAttribute('tabindex', index === 0 ? '0' : '-1');
       if (index === 0) dot.classList.add('carousel__dot--active');
 
-      dot.addEventListener('click', () => goToSlide(index));
-
+      dot.addEventListener('click', () => controller.goToSlide(index));
       dotsContainer.appendChild(dot);
     });
 
-    gallery.appendChild(dotsContainer);
+    return dotsContainer;
+  }
 
-    // Update dots on scroll
-    const updateDots = debounce(() => {
-      const activeIndex = getCurrentIndex();
-
-      dotsContainer.querySelectorAll('.carousel__dot').forEach((dot, i) => {
-        const isActive = i === activeIndex;
-        dot.classList.toggle('carousel__dot--active', isActive);
-        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        dot.setAttribute('tabindex', isActive ? '0' : '-1');
-      });
-    }, 50);
-
-    wrap.addEventListener('scroll', updateDots, { passive: true });
-
-    // Keyboard navigation for carousel
-    gallery.addEventListener('keydown', (e) => {
-      const currentIndex = getCurrentIndex();
-
-      switch (e.key) {
-        case 'ArrowLeft':
-        case 'ArrowUp':
-          e.preventDefault();
-          goToSlide(currentIndex - 1);
-          break;
-        case 'ArrowRight':
-        case 'ArrowDown':
-          e.preventDefault();
-          goToSlide(currentIndex + 1);
-          break;
-        case 'Home':
-          e.preventDefault();
-          goToSlide(0);
-          break;
-        case 'End':
-          e.preventDefault();
-          goToSlide(items.length - 1);
-          break;
-      }
+  /**
+   * Update dots to reflect current active slide
+   */
+  function updateCarouselDots(dotsContainer, activeIndex) {
+    dotsContainer.querySelectorAll('.carousel__dot').forEach((dot, i) => {
+      const isActive = i === activeIndex;
+      dot.classList.toggle('carousel__dot--active', isActive);
+      dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      dot.setAttribute('tabindex', isActive ? '0' : '-1');
     });
+  }
 
-    // Make carousel focusable for keyboard users
-    gallery.setAttribute('tabindex', '0');
+  /**
+   * Handle keyboard navigation for carousel
+   */
+  function handleCarouselKeydown(e, controller) {
+    const keyActions = {
+      ArrowLeft: () => controller.goToSlide(controller.getCurrentIndex() - 1),
+      ArrowUp: () => controller.goToSlide(controller.getCurrentIndex() - 1),
+      ArrowRight: () => controller.goToSlide(controller.getCurrentIndex() + 1),
+      ArrowDown: () => controller.goToSlide(controller.getCurrentIndex() + 1),
+      Home: () => controller.goToSlide(0),
+      End: () => controller.goToSlide(controller.slideCount - 1)
+    };
 
-    // Autoplay with IntersectionObserver
+    if (keyActions[e.key]) {
+      e.preventDefault();
+      keyActions[e.key]();
+    }
+  }
+
+  /**
+   * Create autoplay manager for carousel
+   */
+  function createAutoplayManager(controller, intervalMs = 6000) {
     let autoplayInterval = null;
 
-    const startAutoplay = () => {
-      if (autoplayInterval) return;
-      autoplayInterval = setInterval(() => {
-        const currentIndex = getCurrentIndex();
-        const nextIndex = (currentIndex + 1) % items.length;
-        goToSlide(nextIndex);
-      }, 6000);
-    };
+    return {
+      start() {
+        if (autoplayInterval) return;
+        autoplayInterval = setInterval(() => {
+          const currentIndex = controller.getCurrentIndex();
+          const nextIndex = (currentIndex + 1) % controller.slideCount;
+          controller.goToSlide(nextIndex);
+        }, intervalMs);
+      },
 
-    const stopAutoplay = () => {
-      if (autoplayInterval) {
-        clearInterval(autoplayInterval);
-        autoplayInterval = null;
+      stop() {
+        if (autoplayInterval) {
+          clearInterval(autoplayInterval);
+          autoplayInterval = null;
+        }
       }
     };
+  }
 
-    // Pause autoplay on focus/hover for accessibility
-    gallery.addEventListener('mouseenter', stopAutoplay);
-    gallery.addEventListener('focusin', stopAutoplay);
-    gallery.addEventListener('mouseleave', startAutoplay);
+  /**
+   * Set up autoplay pause/resume event listeners
+   */
+  function setupAutoplayListeners(gallery, autoplay) {
+    gallery.addEventListener('mouseenter', () => autoplay.stop());
+    gallery.addEventListener('focusin', () => autoplay.stop());
+    gallery.addEventListener('mouseleave', () => autoplay.start());
     gallery.addEventListener('focusout', (e) => {
-      // Only restart if focus moves outside the gallery
       if (!gallery.contains(e.relatedTarget)) {
-        startAutoplay();
+        autoplay.start();
       }
     });
+  }
 
-    // Use IntersectionObserver to pause/play when in view
+  /**
+   * Create IntersectionObserver for visibility-based autoplay
+   */
+  function createVisibilityObserver(gallery, autoplay) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          startAutoplay();
+          autoplay.start();
         } else {
-          stopAutoplay();
+          autoplay.stop();
         }
       });
     }, { threshold: 0.5 });
 
     observer.observe(gallery);
+    return observer;
+  }
+
+  // ==========================================================================
+  // CAROUSEL INITIALIZATION
+  // ==========================================================================
+
+  /**
+   * Initialize carousel gallery with CSS scroll-snap
+   * Includes full accessibility support (ARIA, keyboard navigation)
+   */
+  function initCarousel(gallery, wrap) {
+    gallery.classList.add('gallery--carousel');
+    wrap.classList.add('carousel');
+
+    const items = wrap.querySelectorAll('.gallery__item');
+    if (items.length === 0) return;
+
+    // Set up accessibility
+    setupCarouselAccessibility(gallery, items);
+
+    // Create controller for navigation
+    const controller = createCarouselController(wrap, items);
+
+    // Create and append navigation dots
+    const dotsContainer = createCarouselDots(items, controller);
+    gallery.appendChild(dotsContainer);
+
+    // Update dots on scroll
+    const updateDots = debounce(() => {
+      updateCarouselDots(dotsContainer, controller.getCurrentIndex());
+    }, 50);
+    wrap.addEventListener('scroll', updateDots, { passive: true });
+
+    // Set up keyboard navigation
+    gallery.addEventListener('keydown', (e) => handleCarouselKeydown(e, controller));
+
+    // Set up autoplay with visibility detection
+    const autoplay = createAutoplayManager(controller);
+    setupAutoplayListeners(gallery, autoplay);
+
+    const observer = createVisibilityObserver(gallery, autoplay);
     carouselObservers.push(observer);
   }
 
