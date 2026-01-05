@@ -1,0 +1,34 @@
+// - - - - - - - - - - Foundations
+
+@use "reset";
+@use "variables" as *;
+@use "mixins" as *;
+@use "plugins";
+
+
+
+// - - - - - - - - - - Global styles
+
+@use "basic";
+
+@use "components/header";
+@use "components/footer";
+
+@use "components/content";
+@use "components/socials";
+@use "components/gallery";
+@use "components/syntax";
+@use "components/contact-form";
+
+
+
+// - - - - - - - - - - Section styles
+
+@use "components/portfolio";
+@use "components/blog";
+
+blockquote {
+    border-left: .25em solid #dfe2e5;
+    color: #6a737d;
+    padding: 0 1em;
+  }

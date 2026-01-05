@@ -1,5 +1,17 @@
-_site/
-.sass-cache/
-.jekyll-cache/
+# Build output
+dist/
+.astro/
+node_modules/
+
+# OS
 .DS_Store
-_drafts/
+
+# Editor
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.*
