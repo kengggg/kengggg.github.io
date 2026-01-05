@@ -10,7 +10,7 @@ export async function GET(context) {
     description: SITE_DESCRIPTION,
     site: context.site,
     items: posts
-      .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+      .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
       .map((post) => ({
         title: post.data.title,
         pubDate: post.data.date,
