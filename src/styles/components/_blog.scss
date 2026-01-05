@@ -31,7 +31,7 @@
 
                         @include mq(tabletp) {
                                 gap: 40px;
-                                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                                grid-template-columns: 1fr;
                         }
 
                         @include mq(laptop) {
