@@ -45,5 +45,5 @@ excerpt: 'หลายปีผ่านมา Mozilla ทำอะไรอย�
 [7]: https://research.mozilla.org/servo-engines/
 [8]: https://research.mozilla.org/webassembly/
 
-[fig1]: /assets/images/blog/keng.blog-firefox-market-share-in-thailand.png
-[fig2]: /assets/images/blog/keng.blog-firefox-container-logo.jpg
+[fig1]: /images/blog/keng.blog-firefox-market-share-in-thailand.png
+[fig2]: /images/blog/keng.blog-firefox-container-logo.jpg
