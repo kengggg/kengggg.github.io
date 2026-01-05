@@ -2,7 +2,7 @@
   "name": "patipat-blog",
   "type": "module",
   "version": "1.0.0",
-  "description": "Personal blog of Patipat Keng Susumpow",
+  "description": "Personal blog of Keng Susumpow",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
