@@ -8,40 +8,43 @@
 // - - - - - - - - - - - - - - - - - -
 
 .blog {
-	margin-top: 0;
-	padding: 20px 0 0;
+        margin-top: 0;
+        padding: 20px 0 0;
 
-	@include mq(tabletp) {
-		padding: 35px 0 0;
-	}
+        @include mq(tabletp) {
+                padding: 35px 0 0;
+        }
 
-	@include mq(tabletl) {
-		padding: 35px 40px 0;
-	}
+        @include mq(tabletl) {
+                padding: 35px 40px 0;
+        }
 
-	@include mq(laptop) {
-		padding: 53px 60px 0;
-	}
+        @include mq(laptop) {
+                padding: 53px 60px 0;
+        }
+
+        &.single {
+                .wrap {
+                        display: grid;
+                        gap: 32px;
+                        grid-template-columns: 1fr;
+
+                        @include mq(tabletp) {
+                                gap: 40px;
+                                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        }
+
+                        @include mq(laptop) {
+                                gap: 48px;
+                        }
+                }
+        }
 }
 
 .blog-post {
-	margin-top: 40px;
-
-	@include mq(tabletp) {
-		margin-top: 60px;
-	}
-
-	@include mq(tabletl) {
-		margin-top: 80px;
-	}
-
-	@include mq(laptop) {
-		margin-top: 100px;
-	}
-
-	&:first-child {
-		margin-top: 0;
-	}
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
 }
 
 .blog-post__image {
@@ -68,24 +71,15 @@
 }
 
 .blog-post__content {
-	margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex-grow: 1;
 
-	@include mq(tabletp) {
-		margin-top: 25px;
-	}
+        p .button {
+                margin-top: 5px;
 
-	@include mq(tabletl) {
-		margin-top: 30px;
-	}
-
-	@include mq(laptop) {
-		margin-top: 40px;
-	}
-
-	p .button {
-		margin-top: 5px;
-
-		@include mq(tabletl) {
+                @include mq(tabletl) {
 			margin-top: 10px;
 		}
 	}
@@ -101,38 +95,58 @@
 }
 
 .pagination {
-	margin-top: 0;
-	padding: 40px 20px 0;
+        margin-top: 0;
+        padding: 40px 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
 
-	@include mq(tabletp) {
-		padding: 55px 40px 0;
-	}
+        @include mq(tabletp) {
+                padding: 55px 40px 0;
+                gap: 20px;
+        }
 
-	@include mq(tabletl) {
-		padding: 75px 40px 0;
-	}
+        @include mq(tabletl) {
+                padding: 75px 40px 0;
+                gap: 24px;
+        }
 
-	@include mq(laptop) {
-		padding: 93px 60px 0;
-	}
+        @include mq(laptop) {
+                padding: 93px 60px 0;
+        }
 }
 
 .pagination__prev,
 .pagination__next {
-	width: 50%;
+        width: 100%;
 
-	.button {
-		display: block;
-		text-align: center;
-	}
+        .button {
+                display: block;
+                text-align: center;
+        }
+
+        @include mq(tabletp) {
+                width: 50%;
+        }
 }
 
 .pagination__prev {
-	float: left;
-	padding-right: calc($grid-spacing / 2);
+        float: none;
+        padding-right: 0;
+
+        @include mq(tabletp) {
+                float: left;
+                padding-right: calc($grid-spacing / 2);
+        }
 }
 
 .pagination__next {
-	float: right;
-	padding-left: calc($grid-spacing / 2);
+        float: none;
+        padding-left: 0;
+
+        @include mq(tabletp) {
+                float: right;
+                padding-left: calc($grid-spacing / 2);
+        }
 }
