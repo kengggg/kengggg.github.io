@@ -1,38 +1,24 @@
 ---
-import type { GetStaticPaths, Page } from 'astro';
-import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPostCard from '../../components/BlogPostCard.astro';
 import { POSTS_PER_PAGE } from '../../consts';
+import {
+  buildPaginationPaths,
+  fetchPublishedPosts,
+  type BlogEntry,
+  sortPostsByDate,
+} from '../../utils/posts';
 
-export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
-  const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-  const sortedPosts = allPosts.sort((a, b) =>
-    new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-  );
+export const getStaticPaths: GetStaticPaths = async () => {
+  const publishedPosts = await fetchPublishedPosts();
+  const sortedPosts = sortPostsByDate(publishedPosts);
 
-  // Generate pages starting from page 2 (page 1 is handled by index.astro)
-  const paths = [];
-  const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
-
-  for (let i = 2; i <= totalPages; i++) {
-    const start = (i - 1) * POSTS_PER_PAGE;
-    const end = start + POSTS_PER_PAGE;
-    paths.push({
-      params: { page: String(i) },
-      props: {
-        posts: sortedPosts.slice(start, end),
-        currentPage: i,
-        totalPages,
-      },
-    });
-  }
-
-  return paths;
+  return buildPaginationPaths(sortedPosts, POSTS_PER_PAGE);
 };
 
 interface Props {
-  posts: any[];
+  posts: BlogEntry[];
   currentPage: number;
   totalPages: number;
 }
