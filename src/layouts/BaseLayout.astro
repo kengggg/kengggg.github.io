@@ -10,9 +10,12 @@ interface Props {
   description?: string;
   featuredImage?: string;
   type?: 'website' | 'article';
+  publishedTime?: Date;
+  tags?: string[];
 }
 
-const { title, description = settings.basic.site_tagline, featuredImage = '/images/generic/main-cover.jpg', type = 'website' } = Astro.props;
+const { title, description = settings.basic.site_tagline, featuredImage = '/images/generic/main-cover.jpg', type = 'website', publishedTime, tags } = Astro.props;
+const authorName = 'Keng Susumpow';
 const siteTitle = settings.basic.site_title;
 const pageTitle = Astro.url.pathname === '/' ? `${siteTitle} – ${title}` : `${title} – ${siteTitle}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -30,19 +33,38 @@ const fullFeaturedImage = new URL(featuredImage, Astro.site).toString();
   <title>{pageTitle}</title>
   <meta name="description" content={description}>
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalURL}>
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@kengggg">
   <meta name="twitter:title" content={pageTitle}>
   <meta name="twitter:description" content={description}>
-  <meta name="twitter:image:src" content={fullFeaturedImage}>
+  <meta name="twitter:image" content={fullFeaturedImage}>
 
   <!-- Facebook OpenGraph -->
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:type" content={type}>
+  <meta property="og:site_name" content={siteTitle}>
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content={pageTitle}>
   <meta property="og:description" content={description}>
   <meta property="og:image" content={fullFeaturedImage}>
   <meta property="og:image:secure_url" content={fullFeaturedImage}>
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
+
+  <!-- Article-specific OpenGraph (for blog posts) -->
+  {type === 'article' && publishedTime && (
+    <meta property="article:published_time" content={publishedTime.toISOString()} />
+  )}
+  {type === 'article' && (
+    <meta property="article:author" content={authorName} />
+  )}
+  {type === 'article' && tags && tags.map((tag) => (
+    <meta property="article:tag" content={tag} />
+  ))}
 
   <!-- Preconnect hints for faster external resource loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
