@@ -21,6 +21,8 @@ const { frontmatter } = Astro.props;
   description={frontmatter.excerpt}
   featuredImage={frontmatter.featured_image}
   type="article"
+  publishedTime={frontmatter.date}
+  tags={frontmatter.tags}
 >
   <section class="intro">
     <div class="wrap">
