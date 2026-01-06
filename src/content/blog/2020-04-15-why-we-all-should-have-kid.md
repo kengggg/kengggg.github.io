@@ -3,7 +3,7 @@ title: 'ทำไมเราควรถึงจะมีลูก'
 date: 2020-04-15
 categories: [life]
 tags: [family, parenting]
-featured_image: /images/blog/keng.blog-being-parent-cover.jpg
+featured_image: /images/blog/keng.blog-being-parent-cover.webp
 excerpt: 'บันทึกส่วนตัวสั้นๆ ถึงประสบการณ์การเป็นพ่อมาสองปีกว่าๆ'
 ---
 

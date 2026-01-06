@@ -14,7 +14,7 @@ interface Props {
   tags?: string[];
 }
 
-const { title, description = settings.basic.site_tagline, featuredImage = '/images/generic/main-cover.jpg', type = 'website', publishedTime, tags } = Astro.props;
+const { title, description = settings.basic.site_tagline, featuredImage = '/images/generic/main-cover.webp', type = 'website', publishedTime, tags } = Astro.props;
 const authorName = 'Keng Susumpow';
 const siteTitle = settings.basic.site_title;
 const pageTitle = Astro.url.pathname === '/' ? `${siteTitle} – ${title}` : `${title} – ${siteTitle}`;
