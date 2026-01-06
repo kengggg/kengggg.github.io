@@ -3,7 +3,7 @@ title: 'The Space Barons'
 date: 2019-03-26
 categories: [books]
 tags: [spacex, blue origin, elon musk, jeff bezos]
-featured_image: /images/blog/keng.blog-the-space-barons-book-cover.png
+featured_image: /images/blog/keng.blog-the-space-barons-book-cover.webp
 excerpt: 'หนังสือเล่าเรื่องการแข่งขันของอุตสาหกรรมอวกาศระหว่าง SpaceX, Blue Origin และแถมด้วย Virgin Galactic นิดหน่อย'
 ---
 

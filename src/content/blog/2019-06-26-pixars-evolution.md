@@ -3,7 +3,7 @@ title: 'Pixar’s Evolution'
 date: 2019-06-26
 categories: [movies]
 tags: [pixar, animation]
-featured_image: /images/blog/keng.blog-pixel-logo-blog-cover.png
+featured_image: /images/blog/keng.blog-pixel-logo-blog-cover.webp
 excerpt: 'เพิ่งดู Toy Story 4 แล้วพบว่าภาพสวยมากเมื่อเทียบกับภาคแรก เลยมาไล่ดูว่า Pixar พยายามทำเทคนิคทาง CG อะไรบ้างในอดีต จนทำให้ภาพในหนังสวยขึ้นเรื่อยๆ'
 ---
 

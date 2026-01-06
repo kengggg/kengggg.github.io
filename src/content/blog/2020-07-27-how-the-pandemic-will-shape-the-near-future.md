@@ -3,7 +3,7 @@ title: 'How the pandemic will shape the near future'
 date: 2020-07-27
 categories: [publichealth]
 tags: [covid-19, bill gates]
-featured_image: /images/blog/2020-07-27-blog-cover.jpg
+featured_image: /images/blog/2020-07-27-blog-cover.webp
 excerpt: 'Note ประเด็นที่น่าสนใจ เมื่อ Bill Gates มาให้ความเห็นเกี่ยวกับอนาคตหลังจาก COVID-19 กับ Chris Anderson ผู้ก่อตั้ง TED'
 ---
 

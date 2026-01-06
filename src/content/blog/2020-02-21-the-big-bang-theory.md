@@ -3,7 +3,7 @@ title: 'The Big Bang Theory'
 date: 2020-02-21
 categories: [series]
 tags: [netflex, the big bang theory]
-featured_image: /images/blog/keng.blog-big-bang-theory.jpg
+featured_image: /images/blog/keng.blog-big-bang-theory.webp
 excerpt: 'Series ที่พยายามดูบนเครื่องบินหลายครั้งแต่ไม่เคยสนุกเลย จนได้มาดูใน Netflix'
 ---
 
