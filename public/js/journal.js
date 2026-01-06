@@ -281,6 +281,7 @@
     showContent();
     updateActiveLinks();
     initGalleries();
+    initLazyBackgrounds();
     enhanceImages();
     enhanceVideos();
     enhanceTables();
@@ -711,36 +712,39 @@
       img.setAttribute('loading', 'lazy');
     });
 
-    // Add lazy loading to blog post featured images
-    document.querySelectorAll('.blog-post__image').forEach(el => {
-      // For background images, we'll use IntersectionObserver
-      if (!el.dataset.lazyLoaded) {
-        lazyLoadBackgroundImage(el);
-      }
-    });
   }
+
+  // ==========================================================================
+  // LAZY BACKGROUND IMAGES
+  // ==========================================================================
 
   /**
    * Lazy load background images using IntersectionObserver
+   * Targets elements with class "lazy-bg" and data-bg attribute
    */
-  function lazyLoadBackgroundImage(element) {
+  function initLazyBackgrounds() {
+    const els = document.querySelectorAll('.lazy-bg[data-bg]');
+    if (!els.length) return;
+
+    // Fallback for browsers without IntersectionObserver
     if (!('IntersectionObserver' in window)) {
-      // Fallback for older browsers - load immediately
+      els.forEach(el => {
+        el.style.backgroundImage = `url(${el.dataset.bg})`;
+      });
       return;
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          element.dataset.lazyLoaded = 'true';
-          observer.unobserve(element);
-        }
-      });
-    }, {
-      rootMargin: '200px 0px' // Start loading 200px before visible
-    });
+    const io = new IntersectionObserver((entries, obs) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        const el = e.target;
+        el.style.backgroundImage = `url(${el.dataset.bg})`;
+        el.removeAttribute('data-bg');
+        obs.unobserve(el);
+      }
+    }, { rootMargin: '250px 0px' });
 
-    observer.observe(element);
+    els.forEach(el => io.observe(el));
   }
 
   /**

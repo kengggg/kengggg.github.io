@@ -18,7 +18,7 @@ const { title, date, excerpt, featured_image } = post.data;
   </div>
 
   {featured_image && (
-    <a href={`/blog/${post.slug}/`} class="blog-post__image" style={`background-image: url(${featured_image});`}></a>
+    <a href={`/blog/${post.slug}/`} class="blog-post__image lazy-bg" data-bg={featured_image}></a>
   )}
 
   <div class="blog-post__content">
