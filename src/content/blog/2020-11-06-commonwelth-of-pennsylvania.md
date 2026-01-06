@@ -3,11 +3,11 @@ title: 'Commonwealth of Pennsylvania'
 date: 2020-11-06
 categories: [world]
 tags: [usa]
-featured_image: '/images/blog/20201106/2020-11-06-penn-flag-main-cover.png'
+featured_image: '/images/blog/20201106/2020-11-06-penn-flag-main-cover.webp'
 excerpt: งงมากว่าทำไม ผู้ประกาศ CNN หลายคนพยายามมากที่จะพูดว่า "Commonwelth" of Pennsylvania แทนที่จะเป็น "The State" of Pennsylvania
 ---
 
-![](/images/blog/20201106/2020-11-06-penn-flag-content-image.png)
+![](/images/blog/20201106/2020-11-06-penn-flag-content-image.webp)
 
 ในสหรัฐมีรัฐที่เรียกตัวเองว่า Commonwealth อยู่ 4 แห่งคือ Kentucky, Massachusetts, Pennsylvania และ Virginia โดยในทางกฎหมาย Commonwealt ก็ถือว่ามีศักดิ์เท่ากับรัฐอื่นๆ ไม่มากกว่าหรือน้อยกว่ากัน
 

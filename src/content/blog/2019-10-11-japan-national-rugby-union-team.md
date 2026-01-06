@@ -3,7 +3,7 @@ title: 'Japan national rugby union team'
 date: 2019-10-11
 categories: [sports]
 tags: [japan, rugby]
-featured_image: /images/blog/keng.blog_.cover-japan-rugby-team@2x.png
+featured_image: /images/blog/keng.blog_.cover-japan-rugby-team@2x.webp
 excerpt: 'เปิดดู Rugby World Cup 2019 แล้วสงสัยมากทำไมทีมชาติญี่ปุ่นมีฝรั่งเต็มไปหมดเลยต้องมาหาความจริงที่แท้'
 ---
 
