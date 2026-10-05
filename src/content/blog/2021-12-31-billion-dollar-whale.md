@@ -1,9 +1,11 @@
 ---
+slug: billion-dollar-whale
+lang: th
 title: 'Billion Dollar Whale'
 date: 2021-12-31
 categories: [blog]
 tags: [book]
-featured_image: '/images/blog/2021-12-31-billion-dollar-whale-main-cover.webp'
+featured_image: '../../assets/images/blog/2021-12-31-billion-dollar-whale-main-cover.webp'
 excerpt: หนังสือแปลจากคดีการโกงกองทุน 1MDB ของมาเลเซีย แปลโดย สฤณี อาชวานันทกุล
 ---
 

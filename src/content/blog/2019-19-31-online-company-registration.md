@@ -1,9 +1,11 @@
 ---
+slug: online-company-registration
+lang: th
 title: 'จดทะเบียนบริษัทเอง ออนไลน์'
 date: 2019-10-31
 categories: [business]
 tags: [internet]
-featured_image: /images/blog/keng.blog-dbd-registration.webp
+featured_image: ../../assets/images/blog/keng.blog-dbd-registration.webp
 excerpt: 'ต้องจดทะเบียนบริษัท เพื่อนหลายคนบอกให้จ้าง agency ไปเลย แต่เราอยากทำเองทั้งหมด พบว่าง่ายมาก เลยจดประสบการณ์เก็บไว้'
 ---
 

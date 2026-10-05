@@ -1,13 +1,15 @@
 ---
+slug: ipad-vscode-blogging-on-github-pages
+lang: en
 title: 'Using iPad and vscode.dev for blogging on Github Pages'
 date: 2021-10-23
 categories: [blog]
 tags: [github, ipad, vscode]
-featured_image: '/images/blog/20211023/20211023-main-cover.webp'
+featured_image: '../../assets/images/blog/20211023/20211023-main-cover.webp'
 excerpt: My note on the workflow for updating the Github Pages blog entirely on iPad.
 ---
 
-![](/images/blog/20211023/20211023-content-cover.webp)
+![Editing a blog post on iPad](../../assets/images/blog/20211023/20211023-content-cover.webp)
 
 
 _TL;DR The combination of VS Code + GitHub Pages works well for blogging, and while iPad hardware is impressive, iPadOS restrictions hamper efficiency._
@@ -30,5 +32,5 @@ The integration of VS Code and GitHub, both owned by Microsoft, generally works 
 
 [1]: https://code.visualstudio.com/blogs/2021/10/20/vscode-dev
 [2]: https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles
-[3]: https://keng.blog/blog/jekyll-on-apple-silicon
+[3]: /blog/jekyll-on-apple-silicon/
 [4]: https://en.wikipedia.org/wiki/WebP

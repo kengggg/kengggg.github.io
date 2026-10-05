@@ -1,7 +1,9 @@
 ---
+slug: brand-institute
+lang: th
 title: 'Brand Institute'
 date: 2022-01-01
-featured_image: '/images/blog/2022-01-01-brand-institute.webp'
+featured_image: '../../assets/images/blog/2022-01-01-brand-institute.webp'
 excerpt: เอเจนซี่ที่เก่งเรื่องการตั้งชื่อยาและผลิตภัณฑ์ทางการแพทย์ โดยเป็นผู้ตั้งชื่อวัคซีน COVID-19 ของบริษัทต่างๆ ให้ถึง 5 บริษัท
 ---
 

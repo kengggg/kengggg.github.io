@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { settings } from '../data/settings';
 import { fetchPublishedPosts, sortPostsByDate } from '../utils/posts';
 
 export async function GET(context) {
@@ -7,14 +7,14 @@ export async function GET(context) {
   const sortedPosts = sortPostsByDate(posts);
 
   return rss({
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
+    title: settings.title,
+    description: settings.description,
     site: context.site,
     items: sortedPosts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
       description: post.data.excerpt || '',
-      link: `/blog/${post.slug}/`,
+      link: `/blog/${post.id}/`,
     })),
   });
 }

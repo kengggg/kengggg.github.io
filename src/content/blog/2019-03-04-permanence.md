@@ -1,9 +1,11 @@
 ---
+slug: permanence
+lang: th
 title: 'Permanence'
 date: 2019-03-04
 categories: [works]
 tags: [blog, facebook]
-featured_image: /images/blog/keng.blog-permanence.webp
+featured_image: ../../assets/images/blog/keng.blog-permanence.webp
 excerpt: 'Facebook ไม่ได้เป็นที่ที่เหมาะสมกับการเขียนเนื้อหาอะไรถาวร ได้เวลากลับมาเขียนบล็อก'
 ---
 

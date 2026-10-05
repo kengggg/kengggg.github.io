@@ -1,9 +1,11 @@
 ---
+slug: alita-battle-angel
+lang: th
 title: 'Alita: Battle Angel'
 date: 2019-03-10
 categories: [movies]
 tags: [james cameron]
-featured_image: /images/blog/keng.blog-alita-battle-angle-first-body.webp
+featured_image: ../../assets/images/blog/keng.blog-alita-battle-angle-first-body.webp
 excerpt: 'การ์ตูนที่ล้ำยุคขนาด James Cameron อยากสร้างเป็นหนังมาเป็นสิบปีก็สร้างไม่ได้เพราะต้องรอเทคโนโลยีภาพยนต์ให้ถึงก่อน เข้าโรงทั้งทีก็ต้องไปเชียร์น้องกัลลี่สิ'
 ---
 

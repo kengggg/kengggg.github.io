@@ -1,13 +1,15 @@
 ---
+slug: how-the-pandemic-will-shape-the-near-future
+lang: th
 title: 'How the pandemic will shape the near future'
 date: 2020-07-27
 categories: [publichealth]
 tags: [covid-19, bill gates]
-featured_image: /images/blog/2020-07-27-blog-cover.webp
+featured_image: ../../assets/images/blog/2020-07-27-blog-cover.webp
 excerpt: 'Note ประเด็นที่น่าสนใจ เมื่อ Bill Gates มาให้ความเห็นเกี่ยวกับอนาคตหลังจาก COVID-19 กับ Chris Anderson ผู้ก่อตั้ง TED'
 ---
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jmQWOPDqxWA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="How the pandemic will shape the near future — video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/jmQWOPDqxWA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Bill Gates ให้สัมภาษณ์กับ Chris Anderson ผู้ก่อตั้ง TED เรื่อง COVID-19 เนื้อหาส่วนใหญ่เกี่ยวข้องกับ[สถานการณ์การระบาดในสหรัฐฯ][1] ณ. วันที่ 29 มิถุนายน 2563 แต่ก็มีประเด็นย่อยๆ ที่น่าสนใจ เลือกมาเฉพาะที่เกี่ยวกับ COVID-19 และอนาคตที่เป็นไปได้
 

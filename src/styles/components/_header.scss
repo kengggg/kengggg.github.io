@@ -37,29 +37,10 @@
 
 .header-image {
 	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	opacity: 0;
-	@include transition(opacity 0.4s ease-in-out);
-
-	@include mq(tabletl) {
-		position: fixed;
-		right: auto;
-		width: 30%;
-	}
-
-	@include mq(desktop) {
-		width: 25%;
-	}
-}
-
-.header-image--on {
-	opacity: 1;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .header-overlay {
@@ -79,6 +60,7 @@
 
 .header__content {
 	position: relative;
+	text-shadow: 0 1px 4px #000;
 
 	@include mq(tabletl) {
 		position: absolute;
@@ -89,22 +71,6 @@
 	@include mq(laptop) {
 		padding: 60px 60px 52px;
 	}
-}
-
-.header__logo {
-	display: block;
-	width: $logo-width;
-	max-width: 80%;
-
-	@include mq(tabletp) {
-		float: left;
-		max-width: 50%;
-	}
-}
-
-.header__logo__img {
-	width: 100%;
-	height: auto;
 }
 
 .header__title {
@@ -135,7 +101,7 @@
 	font-weight: $sitetagline-weight;
 	letter-spacing: $sitetagline-spacing;
 	line-height: $sitetagline-lineheight;
-	color: rgba($overlay-text-color, 0.7);
+	color: $overlay-text-color;
 
 	@include mq(tabletp) {
 		font-size: $sitetagline-medium;
@@ -162,106 +128,53 @@
 }
 
 .menu__toggle {
-	position: absolute;
-	z-index: 1002;
-	top: 0;
-	right: 0;
-	cursor: pointer;
-	font-size: 15px;
-	line-height: 20px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: $overlay-text-color;
+  cursor: pointer;
 
-	@include mq(tabletl) {
-		display: none;
-	}
+  &[hidden] { display: none; }
+  @include mq(tabletl) { display: none; }
 }
 
 .menu__toggle__icon {
-	float: right;
-	position: relative;
-	width: 24px;
-	height: 20px;
-	margin-left: 8px;
-
-	span, span:before, span:after {
-		content: '';
-		position: absolute;
-		top: 8px;
-		left: 0;
-		width: 100%;
-		height: 3px;
-		@include transition(all 0.1s);
-		background: rgba($overlay-text-color, 0.7);
-	}
-
-	span:before {
-		top: -8px;
-	}
-
-	span:after {
-		top: 8px;
-	}
+  position: relative;
+  width: 24px;
+  height: 20px;
+  span, span:before, span:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: currentColor;
+  }
+  span:before { top: -8px; }
+  span:after { top: 8px; }
 }
 
-.menu--open .menu__toggle__icon {
-
-	span:before, span:after {
-		background: $overlay-text-color !important;
-	}
-
-	span {
-		background-color: transparent !important;
-	}
-
-	span:before,
-	span:after {
-		top: 0;
-	}
-
-	span:before {
-		@include rotate(45);
-	}
-
-	span:after {
-		@include rotate(-45);
-	}
-}
-
-.menu__wrap {
-	position: fixed;
-	z-index: 1000;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba($overlay-background-color,0.95);
-	overflow: auto;
-
-	visibility: hidden;
-	opacity: 0;
-	@include transition(all 0.2s ease-in-out);
-
-	@include mq(tabletl) {
-		position: relative;
-		background: transparent;
-		visibility: visible;
-		overflow: visible;
-		opacity: 1;
-		@include transition(none);
-	}
-}
-
-.menu--open .menu__wrap {
-	visibility: visible;
-	opacity: 1;
+.menu__wrap { margin-top: 16px; }
+.menu--enhanced:not(.menu--open) .menu__wrap { display: none; }
+@include mq(tabletl) {
+  .menu__wrap { margin-top: 0; }
+  .menu--enhanced:not(.menu--open) .menu__wrap { display: block; }
 }
 
 .menu__list {
 	list-style: none;
 	margin: 0 auto;
-	padding: 12px 20px;
+	padding: 0;
 
 	@include mq(tabletp) {
-		padding: 30px 40px;
+		padding: 0;
 	}
 
 	@include mq(tabletl) {
@@ -270,14 +183,11 @@
 	}
 }
 
-.menu__list__item {
-
-}
-
 .menu__list__item__link {
-	font-size: $menu-small;
+	display: inline-block;
+	font-size: $menu-medium;
 	font-weight: $menu-weight;
-	color: rgba($overlay-text-color, 0.7);
+	color: $overlay-text-color;
 	padding: 10px 0;
 
 	&:hover {
@@ -293,32 +203,16 @@
 		font-size: $menu-large;
 	}
 
-	&.active-link {
+	&[aria-current="page"] {
 		color: $overlay-text-color;
 	}
 }
 
-.menu__button {
-	margin-top: 15px;
-	padding: 15px 20px 16px;
-	font-size: 13px;
-
-	@include mq(tabletl) {
-		margin-top: 0;
-		padding: 11px 20px 12px;
-		font-size: 15px;
-	}
-}
-
-
-
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Socials
-
 .header .socials {
-	padding: 12px 20px;
+	padding: 0;
 
 	@include mq(tabletp) {
-		padding: 10px 40px;
+		padding: 0;
 	}
 
 	@include mq(tabletl) {

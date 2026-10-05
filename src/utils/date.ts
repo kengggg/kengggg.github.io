@@ -6,6 +6,7 @@ export function formatDate(date: Date): string {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
+    timeZone: 'UTC',
   });
 }
 

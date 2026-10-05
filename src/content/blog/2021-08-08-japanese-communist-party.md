@@ -1,13 +1,15 @@
 ---
+slug: japanese-communist-party
+lang: th
 title: 'Japanese Communist Party'
 date: 2021-08-08
 categories: [world]
 tags: [japan, politics]
-featured_image: '/images/blog/20210808/2021-08-08-japanese-comunist-party-cover.webp'
+featured_image: '../../assets/images/blog/20210808/2021-08-08-japanese-comunist-party-cover.webp'
 excerpt: ทำความรู้จักกับพรรคคอมมิวนิสต์ที่อยู่ในประเทศที่ปกครองด้วยระบอบประชาธิปไตยที่ใหญ่ที่สุดในโลก
 ---
 
-![](/images/blog/20210808/2021-08-08-japanese-comunist-party-content-image.webp)
+![พรรคคอมมิวนิสต์ญี่ปุ่น](../../assets/images/blog/20210808/2021-08-08-japanese-comunist-party-content-image.webp)
 
 เวลาพูดถึงพรรคคอมมิวนิสต์ ก็จะนึกถึงประเทศที่ใช้ระบอบคอมมิวนิสต์และใช้การปกครองแบบพรรคเดียว
 

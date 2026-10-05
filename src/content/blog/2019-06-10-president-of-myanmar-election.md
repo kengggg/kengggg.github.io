@@ -1,9 +1,11 @@
 ---
+slug: president-of-myanmar-election
+lang: th
 title: 'President of Myanmar’s Election'
 date: 2019-06-10
 categories: [politics]
 tags: [election, myanmar]
-featured_image: /images/blog/keng.blog-president-of-myanmar-election.webp
+featured_image: ../../assets/images/blog/keng.blog-president-of-myanmar-election.webp
 excerpt: 'กองทัพเมียนมาร์วางกลไกการสืบทอดอำนาจผ่านรัฐสภาไว้ในรัฐธรรมนูญปี 2008 ซึ่งดูแล้วประเทศเพื่อนบ้านก็คงได้รับแรงบันดาลใจมาอย่างแรงกล้า'
 ---
 
@@ -22,4 +24,4 @@ excerpt: 'กองทัพเมียนมาร์วางกลไกก�
 ดังนั้นหากพรรคการเมืองที่ต้องการจำกัดอำนาจของกองทัพจึงต้องพยายามให้ได้จำนวนที่นั่งรวมกันเกิน 50% เพื่อปิดสวิทช์สมาชิกรัฐสภาที่มาจากการแต่งตั้งจากกองทัพ ซึ่งพรรค NLD ของ ออง ซาน ซูจี ก็[ทำได้][1]โดยได้ที่นั่ง 60.3% ในสภาชาติพันธุ์และ 58% ในสภาประชาชน เมียนมาร์จึงสามารถมีประธานาธิบดีคนแรกที่เป็นพลเรือนในรอบหลายทศวรรษ
 
 [1]: https://en.wikipedia.org/wiki/2015_Myanmar_general_election
-[fig1]: /images/blog/keng.blog-myanmar-members-of-paliament.webp
+[fig1]: ../../assets/images/blog/keng.blog-myanmar-members-of-paliament.webp

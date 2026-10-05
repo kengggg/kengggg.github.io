@@ -1,16 +1,18 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import portrait from '../assets/images/generic/about-image.webp';
 ---
 
 <PageLayout
   title="About"
-  featuredImage="/images/generic/main-cover.webp"
+  lang="en"
 >
-  <p><img src="/images/generic/about-image.webp" alt="Patipat Keng Susumpow"></p>
+  <div class="image-wrap"><Image src={portrait} alt="Patipat Keng Susumpow" widths={[320, 640, 960]} sizes="(min-width: 1024px) 60vw, 100vw" loading="eager" /></div>
 
   <p>I'm Patipat "Keng" Susumpow, co-founder of <a href="https://www.opendream.co.th">Opendream</a>, <a href="https://vote62.com">Vote62</a>, <a href="https://onehealthtoolkit.org">One Health Toolkit</a>, and <a href="https://taejai.com">Taejai</a>, focusing on digital solutions for public health and government accountability. Developed systems for disease detection, crowdsourced vote monitoring.</p>
 
-  <h3>Area of interest</h3>
+  <h2>Area of interest</h2>
 
   <ul>
     <li>Participatory disease surveillance</li>

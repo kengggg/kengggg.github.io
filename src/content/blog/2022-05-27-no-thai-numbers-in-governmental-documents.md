@@ -1,13 +1,15 @@
 ---
+slug: no-thai-numbers-in-governmental-documents
+lang: th
 title: 'ทำไมเอกสารราชการต้องใช้เลขไทย'
 date: 2022-05-27
 categories: [works]
 tags: [documents, campaign, thai]
 excerpt: ที่มาของการใช้เลขไทยอย่างบ้าคลั่งไม่บันยะบันยังไม่ดูกาละเทศะของหน่วยราชการมีที่มาจากจุดเล็กๆ ในปีเดียวกับ Y2K
-featured_image: '/images/blog/20220527-no-thai-numbers-in-governmental-documents-main-cover.webp'
+featured_image: '../../assets/images/blog/20220527-no-thai-numbers-in-governmental-documents-main-cover.webp'
 ---
 
-![Thai numbers from 0 to 9](/images/blog/20220527-no-thai-numbers-in-governmental-documents-content-cover.webp)
+![Thai numbers from 0 to 9](../../assets/images/blog/20220527-no-thai-numbers-in-governmental-documents-content-cover.webp)
 
 _ของเดิมอยู่ที่ [Facebook Post][-1] เมื่อวันที่ 25 พฤษภาคม 2565 ตอนนี้กลายเป็นแคมเปญบน [change.org][0] ไปแล้ว_
 

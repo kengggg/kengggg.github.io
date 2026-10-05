@@ -1,16 +1,10 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import { formatDate } from '../utils/date';
+import { formatDate, formatDateISO } from '../utils/date';
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  frontmatter: {
-    title: string;
-    date: Date;
-    excerpt?: string;
-    featured_image?: string;
-    categories?: string[];
-    tags?: string[];
-  };
+  frontmatter: CollectionEntry<'blog'>['data'];
 }
 
 const { frontmatter } = Astro.props;
@@ -23,11 +17,12 @@ const { frontmatter } = Astro.props;
   type="article"
   publishedTime={frontmatter.date}
   tags={frontmatter.tags}
+  lang={frontmatter.lang}
 >
   <section class="intro">
     <div class="wrap">
       <h1>{frontmatter.title}</h1>
-      <p>{formatDate(frontmatter.date)}</p>
+      <p><time datetime={formatDateISO(frontmatter.date)} lang="en">{formatDate(frontmatter.date)}</time></p>
     </div>
   </section>
 

@@ -1,9 +1,11 @@
 ---
+slug: future-backward
+lang: th
 title: 'Future Backward'
 date: 2022-05-05
 categories: [works]
 tags: [impact, moderna, innovation, mit, solve]
-featured_image: '/images/blog/20220505-future-backward-main-cover.webp'
+featured_image: '../../assets/images/blog/20220505-future-backward-main-cover.webp'
 excerpt: ความเห็นของผู้ร่วมก่อตั้ง Moderna ในเรื่องการสร้างนวัตกรรมแห่งอนาคตที่ไกลกว่าความรู้ที่มีในปัจจุบัน
 ---
 
@@ -13,7 +15,7 @@ Afeyan เล่าให้ฟังว่าการค้นพบที่�
 
 Afeyan บอกว่าปกตินวัตกรรมจะเกิดได้ 3 แบบคือ
 
-![](/images/blog/20220505-future-backward-content-cover.webp)
+![แผนภาพเปรียบเทียบ Niche Innovation กับ Adjacency Innovation](../../assets/images/blog/20220505-future-backward-content-cover.webp)
 
 1. __Niche innovation__ - นวัตกรรมที่เกิดขึ้นในแวดวงความรู้ หรือ domain ที่คนคิดอยู่
 2. __Adjacency innovation__ - นวัตกรรมที่เกิดจากการสำรวจสิ่งที่อยู่ข้างๆ แวดวงความรู้
