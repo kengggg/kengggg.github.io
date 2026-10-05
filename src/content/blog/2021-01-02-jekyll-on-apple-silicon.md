@@ -1,13 +1,15 @@
 ---
+slug: jekyll-on-apple-silicon
+lang: en
 title: 'Installing Jekyll on Apple Silicon'
 date: 2021-01-02
 categories: [tech]
 tags: [apple, jekyll]
-featured_image: '/images/blog/20210102/jekyll-on-apple-silicon-main-cover.webp'
+featured_image: '../../assets/images/blog/20210102/jekyll-on-apple-silicon-main-cover.webp'
 excerpt: Jekyll is good. Apple Silicon is good. Homebrew is good. But they're not willing to work together peacfully at the moment.
 ---
 
-![](/images/blog/20210102/jekyll-on-apple-silicon-cover.webp)
+![Jekyll on Apple Silicon](../../assets/images/blog/20210102/jekyll-on-apple-silicon-cover.webp)
 
 I just switched my daily laptop from the ThinkPad X1 Carbon to the one with an Apple Silicon. The transition was __almost__ seamless but Jekyll was not be able to run on the Apple `arm64` architechture. Furtunately, Apple's Rosetta Translation Environment enables running [x86_64][1] code through the command `arch -X86_64`, including Jekyll and friends to work.
 

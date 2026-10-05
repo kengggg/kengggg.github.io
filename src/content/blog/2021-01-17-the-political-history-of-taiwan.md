@@ -1,20 +1,22 @@
 ---
+slug: the-political-history-of-taiwan
+lang: th
 title: 'The Political History of Taiwan'
 date: 2021-01-17
 categories: [world]
 tags: [taiwan, history]
-featured_image: '/images/blog/20210117/2021-01-17-taiwan-main-cover.webp'
+featured_image: '../../assets/images/blog/20210117/2021-01-17-taiwan-main-cover.webp'
 excerpt: วันก่อนเกิดอยากรู้ประวัติศาสตร์ไต้หวันขึ้นมา ไปไล่อ่านแล้วก็พบว่าตัวเองรู้น้อยและเข้าใจผิดอีกต่างหาก เลยสรุปเก็บไว้อ้างอิงเอง
 ---
 
-![](/images/blog/20210117/2021-01-17-taiwan-content-image.webp)
+![ตราประทับอักษรจีนสีแดงบนพื้นสีเทา](../../assets/images/blog/20210117/2021-01-17-taiwan-content-image.webp)
 
 
 แหล่งอ้างอิงประวัติศาสตร์ไต้หวันที่ดีที่สุดก็คงเป็นจาก timeline ใน [เว็บของรัฐบาลไต้หวัน][1] แต่เราถือวิสาสะแบ่งยุคสมัยเอง โดยรวบรวมจากเอกสารอื่นๆ ก็คงมียุคดังนี้
 
 ## ยุคก่อนอาณานิคม
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Dapper_-_1670_-_Gedenkwaerdig_bedryf_-_UB_Radboud_Uni_Nijmegen_-_180148540_038_%28cropped%29.jpg/303px-Dapper_-_1670_-_Gedenkwaerdig_bedryf_-_UB_Radboud_Uni_Nijmegen_-_180148540_038_%28cropped%29.jpg)
+<div class="image-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Dapper_-_1670_-_Gedenkwaerdig_bedryf_-_UB_Radboud_Uni_Nijmegen_-_180148540_038_%28cropped%29.jpg" width="303" height="240" alt="ภาพประกอบจากหนังสือของ Olfert Dapper ปี 1670" loading="lazy" decoding="async"></div>
 
 - ประชากรดั้งเดิมของไต้หวันเป็นชาวโพลินีเชีย
 - มีเอกสารของจีนที่ระบุถึงการสำรวจเกาะไต้หวันตั้งแต่ ค.ศ. 239
@@ -23,13 +25,13 @@ excerpt: วันก่อนเกิดอยากรู้ประวั�
 
 ## ยุคอาณานิคม ค.ศ. 1642 - 1662
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Flag_of_the_Dutch_East_India_Company.svg/200px-Flag_of_the_Dutch_East_India_Company.svg.png)
+<div class="image-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Flag_of_the_Dutch_East_India_Company.svg" width="200" height="133" alt="ธงบริษัทอินเดียตะวันออกของดัตช์" loading="lazy" decoding="async"></div>
 
 [VOC][2] เข้ามาตั้งสถานีการค้าบนเกาะไต้หวัน
 
 ## ยุคการปกครองโดยจีน ค.ศ. 1662 - 1895
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Ming_dynasty_%28Chinese_characters%29.svg/200px-Ming_dynasty_%28Chinese_characters%29.svg.png)
+<div class="image-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Ming_dynasty_%28Chinese_characters%29.svg" width="200" height="99" alt="อักษรจีนแทนราชวงศ์หมิง" loading="lazy" decoding="async"></div>
 
 - ผู้ภักดีต่อ[ราชวงศ์หมิง][3] หนีแมนจูจากแผ่นดินใหญ่มาสร้างอำนาจในเกาะและขับไล่ชาวยุโรปออกไป
 - กองทัพ[ราชวงศ์ชิง][4] ยึดครองเกาะ
@@ -37,7 +39,7 @@ excerpt: วันก่อนเกิดอยากรู้ประวั�
 
 ## ยุคการปกครองโดยญี่ปุ่น ค.ศ. 1895 - 1945
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Seal_of_the_Government-General_of_Taiwan.svg/200px-Seal_of_the_Government-General_of_Taiwan.svg.png)
+<div class="image-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Seal_of_the_Government-General_of_Taiwan.svg" width="200" height="200" alt="ตรารัฐบาลผู้สำเร็จราชการไต้หวันในสมัยญี่ปุ่น" loading="lazy" decoding="async"></div>
 
 - หลังจาก[พ่ายแพ้ต่อจักรวรรดิญี่ปุ่น][5] รัฐบาลราชวงศ์ชิงลงนาม[สนธิสัญญาชิโมะโนะเซะกิ][6] ที่มีเนื้อหาระบุให้จีนยกเกาะไต้หวันและพื้นที่อื่นๆ ให้กับญี่ปุ่น
 - ญี่ปุ่นเข้าปกครองไต้หวัน แบ่งเป็นยุคย่อยอีก 3 ยุคคือ
@@ -59,7 +61,7 @@ excerpt: วันก่อนเกิดอยากรู้ประวั�
 
 ## ยุคสาธารณรัฐจีน บนแผ่นดินใหญ่ ค.ศ. 1945 - 1949
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_China_%281912–1928%29.svg/200px-Flag_of_China_%281912–1928%29.svg.png)
+<div class="image-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Flag_of_China_%281912%E2%80%931928%29.svg" width="200" height="125" alt="ธงห้าสีของสาธารณรัฐจีนระหว่างปี 1912–1928" loading="lazy" decoding="async"></div>
 
 - เกาะไต้หวันคืนสู่การปกครองของสาธารณรัฐจีน
 - พรรคก๊กมินตั๋งปกครองไต้หวันอย่างเข้มงวด จนเกิดเหตุการณ์ [228][7] ในปี ค.ศ. 1947
@@ -70,7 +72,7 @@ excerpt: วันก่อนเกิดอยากรู้ประวั�
 
 ## ยุคสาธารณรัฐจีน บนเกาะไต้หวัน ค.ศ. 1949 - ปัจจุบัน
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Flag_of_the_Republic_of_China.svg/200px-Flag_of_the_Republic_of_China.svg.png)
+<div class="image-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Flag_of_the_Republic_of_China.svg" width="200" height="133" alt="ธงสาธารณรัฐจีน" loading="lazy" decoding="async"></div>
 
 - เจียง ไค เช็ค ปกครองสาธารณรัฐจีนจากเกาะไต้หวัน เหมา เจ๋อ ตุง ก่อตั้งสาธารณรัฐประชาชนจีนจากแผ่นดินใหญ่ ทั้งสองประเทศพยายามอ้างว่าตัวเองเป็น จีน ที่แท้จริง
 - พรรค ก๊ก มิน ตั๋ง ปกครองไต้หวันภายใต้กฎอัยการศึกจนถึงปี ค.ศ. 1987

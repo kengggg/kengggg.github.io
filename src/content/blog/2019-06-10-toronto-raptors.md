@@ -1,9 +1,11 @@
 ---
+slug: toronto-raptors
+lang: th
 title: 'Toronto Raptors'
 date: 2019-06-10
 categories: [sports]
 tags: [canada, nba, basketball]
-featured_image: /images/blog/keng.blog-toronto-raptors.webp
+featured_image: ../../assets/images/blog/keng.blog-toronto-raptors.webp
 excerpt: 'เมื่อทีมนอกอเมริกาเข้าชิงแชมป์บาสเก็ตบอลในลีกอเมริกาที่ยิ่งใหญ่ที่สุดในโลก'
 ---
 
@@ -17,4 +19,4 @@ excerpt: 'เมื่อทีมนอกอเมริกาเข้าช�
 
 ตามประสาทีมเข้าใหม่ก็ต้องมีชะตากรรมลุ่มๆ ดอนๆ มารุ่งสุดก็ฤดูกาลนี้ซึ่งต้องชิงกับ Golden State Warriors แชมป์เก่าปี 2015, 2017 และ 2018 ซึ่ง~~ถึงวันนี้ Raptors นำอยู่ 3-1 ซึ่งมีโอกาสลุ้นแชมป์สูงมาก ถ้าชนะก็ยินดีกับชาวแคนาดาด้วยจ้า~~ Raptors ก็ชนะไปได้ด้วยผลแข่งรวม 4-2 ได้แชมป์ NBA เป็นครั้งแรก ยินดีด้วยจ้า
 
-[fig1]: /images/blog/keng.blog-nba-teams.webp
+[fig1]: ../../assets/images/blog/keng.blog-nba-teams.webp

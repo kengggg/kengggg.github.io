@@ -1,18 +1,20 @@
 ---
+slug: star-trek-discovery
+lang: th
 title: 'Star Trek: Discovery'
 date: 2021-01-09
 categories: [series]
 tags: [startrek, netflix]
-featured_image: '/images/blog/20210110/star-trek-discovery-cover.webp'
+featured_image: '../../assets/images/blog/20210110/star-trek-discovery-cover.webp'
 excerpt: เคยเถียงกับมิตรสหายหลายท่านว่า Star Wars ดีกว่า Star Trek ตอนนี้ขอถอนคำพูดจ้า
 ---
 
-![](/images/blog/20210110/star-trek-discovery-logo.webp)
+![สัญลักษณ์ Star Trek: Discovery](../../assets/images/blog/20210110/star-trek-discovery-logo.webp)
 
 ไม่ใช่แฟน Star Trek เลยไม่เคยดู series Star Trek เลย เคยดู[หนัง][1] ที่ J.J. Abrams กำกับก็รู้สึกว่าสนุกดี จนได้มาดูใน Netflix ก็ตาสว่างเลยว่า หนัง 3 เรื่องนั้นเทียบไม่ได้กับ series เลย
 
 <p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oWnYtyNKPsA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="Star Trek: Discovery — video" width="560" height="315" src="https://www.youtube.com/embed/oWnYtyNKPsA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 ในฐานะแฟน Star Wars พอมาดู Star Trek นาทีแรกๆ แล้วก็รู้สึกขัดหูขัดตาเยอะแยะ ทำไมพูดกันเยอะจัง ทำไม action น้อยจัง เรื่องสำคัญคือ เราโตมากับดูสื่ออวกาศที่นำโดยผู้ชายคนขาวมานาน พอมาเจอความหลากหลายทางวัฒนธรรมของ Star Trek แล้วก็พบว่ามันตื่นตาตื่นใจมาก

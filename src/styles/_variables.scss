@@ -8,8 +8,8 @@ $background-alt-color: #F5F7FA;
 $border-color: #dddddd;
 
 $text-dark-color: #2A2F36;
-$text-medium-color: #6C7A89;
-$text-light-color: #ABB7B7;
+$text-medium-color: #526171;
+$text-light-color: #626F70;
 
 $accent-color: #A2DED0;
 
@@ -19,8 +19,8 @@ $overlay-text-color: #ffffff;
 $error-color: #D64541;
 
 // Fonts
-$body-font: "Thonburi","IBM Plex Sans Thai Looped","Muli", sans-serif;
-$title-font: "IBM Plex Sans Thai Looped","Merriweather", sans-serif;
+$body-font: "IBM Plex Sans Thai Looped", "Thonburi", sans-serif;
+$title-font: $body-font;
 
 $regular-weight: 400;
 $bold-weight: 600;
@@ -90,7 +90,7 @@ $h6-lineheight: 1.6;
 $p-small: 16px;
 $p-medium: 18px;
 $p-large: 20px;
-$p-weight: 300;
+$p-weight: 400;
 $p-spacing: 0em;
 $p-lineheight: 1.6;
 

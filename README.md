@@ -1,102 +1,91 @@
-# Open Journal
+# patipat.org
 
-A minimal, elegant blog theme for Astro.
+Keng Susumpow’s personal blog, built as a static Astro 7 site with Markdown content.
 
-## Features
+## Local development
 
-- Clean, typography-focused design
-- Responsive layout
-- Blog pagination
-- RSS feed generation
-- Sitemap generation
-- SCSS styling with CSS custom properties
-- Social media links
-- Contact form support (via Formspree)
-- SEO-friendly markup
+Use Node.js 24 LTS (`.node-version`) and npm. Node.js 26 is also supported.
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm or pnpm
-
-### Installation
-
-```bash
-npm install
-```
-
-### Development
-
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-### Build
+`npm run build` runs Astro’s type checks and builds `dist/`. Use `npm run preview` to inspect that exact output locally. The site uses standard browser navigation; articles and navigation remain usable with JavaScript disabled. JavaScript only enhances the mobile menu.
 
-```bash
-npm run build
-```
+## Publishing a post
 
-### Preview
-
-```bash
-npm run preview
-```
-
-## Project Structure
-
-```
-/
-├── public/
-│   ├── images/
-│   └── js/
-├── src/
-│   ├── components/
-│   ├── content/blog/
-│   ├── data/
-│   ├── layouts/
-│   ├── pages/
-│   ├── styles/
-│   └── utils/
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
-
-## Configuration
-
-Edit `src/data/settings.ts` to customize:
-
-- Site title and tagline
-- Social media links
-- Menu items
-- Contact form settings
-
-Edit `src/consts.ts` to customize:
-
-- Site URL
-- Posts per page
-- Author name
-
-## Content
-
-Blog posts are written in Markdown and stored in `src/content/blog/`.
-
-### Front Matter
+Create a Markdown file in `src/content/blog/`. The filename may include a date for sorting files; the required `slug` determines the permanent public URL.
 
 ```yaml
 ---
-title: Post Title
-date: 2024-01-01
-categories: [category1, category2]
-tags: [tag1, tag2]
-featured_image: /images/blog/image.jpg
-excerpt: A brief description of the post
+title: My post
+slug: my-post
+lang: en
+date: 2026-10-06
+categories: [blog]
+tags: [astro]
+featured_image: ../../assets/images/blog/my-post.webp
+excerpt: A short description of the article.
+draft: true
 ---
 ```
 
+The URL is `/blog/my-post/`. Slugs must be unique, lowercase words separated by hyphens, without a date prefix. Numeric-only slugs are reserved for pagination. Preserve a published slug when renaming its source file. Date-prefixed article routes are intentionally absent, with no redirects.
+
+Set `lang` to `th` or `en` for the article’s main language. The interface labels remain English. Dates are formatted as calendar dates in UTC, so the build machine’s timezone cannot shift them by a day.
+
+`draft: true` excludes the post from generated article pages, listings, RSS, and the sitemap. To publish, change it to `false` or remove the field. Dates control ordering; a future date does not schedule publication. Files in the top-level `drafts/` directory are outside the content collection.
+
+## Images and embedded content
+
+Store image source files in `src/assets/images/`. Reference them from Markdown using relative paths and descriptive alt text:
+
+```md
+![Description of the image](../../assets/images/blog/my-post.webp)
+```
+
+Astro generates responsive images with dimensions and native lazy loading. Listing pages load the first card eagerly. For remote images, use an HTML `<img>` with accurate `width`, `height`, `alt`, and `loading="lazy"`; this avoids network-dependent builds. Give every embedded video a descriptive `title`.
+
+Images, video embeds, and tables receive their wrappers during the build. Image paragraphs containing text are preserved. Article Markdown headings start at level two in the generated document because the layout already provides the article title.
+
+Astro 7 uses the explicit `unified()` Markdown processor so the rehype formatting remains active. `compressHTML: true` preserves spaces between inline elements. The collection uses the current `render(post)` and entry `id` APIs, without legacy collection flags.
+
+Previously published `/images/blog/...` and `/images/generic/...` URLs are retained by copying the source image tree into the build output. The pages themselves use Astro’s optimized assets. This keeps one source copy of each image in the repository.
+
+## Configuration
+
+- `src/data/settings.ts`: site identity, URL, author, pagination, font URL, and navigation/social links. Astro config, layouts, and RSS share these values.
+- `src/styles/_variables.scss`: colors, typography, spacing, and breakpoints via `_mixins.scss`.
+- `src/content.config.ts`: Content Layer glob loader, post schema, and image validation. Entry IDs come from the explicit frontmatter slugs.
+- `scripts/content-checks.mjs`: stable-slug validation and compatibility image copies.
+- `scripts/rehype-content.mjs`: build-time Markdown presentation.
+
+## Verification
+
+Install browser binaries once, then run the complete suite:
+
+```sh
+npx playwright install chromium firefox webkit
+npm test
+```
+
+The suite includes timezone and slug checks, type checking, a production build, generated-link/metadata/image checks, an isolated build proving that drafts stay unpublished, and Chromium/Firefox/WebKit tests for navigation, history, keyboard access, no-JavaScript reading, responsive images, pagination, and accessibility. Tests create temporary draft fixtures outside the working tree.
+
+Useful focused commands:
+
+```sh
+npm run check
+npm run test:unit
+npm run build && npm run test:build
+npm run test:publishing
+npm run test:e2e
+```
+
+On macOS 27, Playwright Firefox can fail before opening a page because of an [upstream app-data permission issue](https://github.com/microsoft/playwright/issues/42768). To check the other engines locally, use `npm run test:e2e -- --project=chromium --project=webkit`. The Linux CI job still runs all three engines.
+
+The GitHub Actions workflow runs these checks on pull requests and pushes to `main`, rejects high/critical dependency advisories, and retains browser evidence on failure. It does not deploy the site. Deploy the complete `dist/` output, including `404.html`; the host must serve that file with a 404 status for unknown routes.
+
 ## License
 
-See LICENSE.md for details.
+See [LICENSE](LICENSE). Third-party image rights remain with their respective owners.

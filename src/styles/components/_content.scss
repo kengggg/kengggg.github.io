@@ -144,7 +144,6 @@
 		margin-top: 10px;
 	}
 
-	.highlighter-rouge,
 	.astro-code,
 	table {
 		margin: 20px auto;
@@ -168,7 +167,6 @@
 		}
 	}
 
-	.highlight,
 	.astro-code {
 		display: block;
 		padding: 0;
@@ -185,17 +183,6 @@
 			font-size: $p-large*0.85;
 		}
 
-		.highlight {
-			padding: 20px;
-
-			@include mq(tabletp) {
-				padding: 30px;
-			}
-
-			@include mq(laptop) {
-				padding: 40px;
-			}
-		}
 	}
 
 	// Astro code blocks

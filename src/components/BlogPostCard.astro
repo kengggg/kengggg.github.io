@@ -1,29 +1,33 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { formatDate } from '../utils/date';
+import { Image } from 'astro:assets';
+import { formatDate, formatDateISO } from '../utils/date';
 
 interface Props {
   post: CollectionEntry<'blog'>;
+  eager?: boolean;
 }
 
-const { post } = Astro.props;
-const { title, date, excerpt, featured_image } = post.data;
+const { post, eager = false } = Astro.props;
+const { title, date, excerpt, featured_image, lang } = post.data;
 ---
 
-<article class="blog-post">
+<article class="blog-post" lang={lang}>
 
   <div class="blog-post__header">
-    <h2 class="blog-post__title"><a href={`/blog/${post.slug}/`}>{title}</a></h2>
-    <p class="blog-post__subtitle">{formatDate(date)}</p>
+    <h2 class="blog-post__title"><a href={`/blog/${post.id}/`}>{title}</a></h2>
+    <p class="blog-post__subtitle"><time datetime={formatDateISO(date)} lang="en">{formatDate(date)}</time></p>
   </div>
 
   {featured_image && (
-    <a href={`/blog/${post.slug}/`} class="blog-post__image" style={`background-image: url(${featured_image});`}></a>
+    <a href={`/blog/${post.id}/`} class="blog-post__image" aria-label={title}>
+      <Image src={featured_image} alt="" widths={[320, 640, 960, 1280]} sizes="(min-width: 1600px) calc(75vw - 120px), (min-width: 1220px) calc(70vw - 120px), (min-width: 1024px) calc(70vw - 80px), (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} />
+    </a>
   )}
 
   <div class="blog-post__content">
     {excerpt && <p>{excerpt}</p>}
-    <p><a href={`/blog/${post.slug}/`} class="button">Read More</a></p>
+    <p><a href={`/blog/${post.id}/`} class="button" lang="en">Read More<span class="sr-only" lang={lang}>: {title}</span></a></p>
   </div>
 
 </article>

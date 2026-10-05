@@ -1,51 +1,72 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { settings } from '../data/settings';
 import SocialLinks from './SocialLinks.astro';
 
-interface Props {
-  featuredImage?: string;
-}
-
-const { featuredImage = '/images/generic/main-cover.webp' } = Astro.props;
+interface Props { featuredImage: ImageMetadata; }
+const { featuredImage } = Astro.props;
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
-<header class="header">
-
-  <div class="header-image header-image--on" style={`background-image: url(${featuredImage});`}></div>
-  <div class="header-image"></div>
-
+<header class="header" lang="en">
+  <Image
+    class="header-image" src={featuredImage} alt=""
+    widths={[640, 1280, 1920]} sizes="(min-width: 1024px) 100vh, 100vw"
+    loading="eager" decoding="async"
+  />
   <div class="header-overlay"></div>
-
   <div class="header__content">
-
-    {settings.header.logo_image ? (
-      <a href="/" class="header__logo">
-        <img src={settings.header.logo_image} class="header__logo__img" alt={settings.basic.site_title}>
-      </a>
-    ) : (
-      <a href="/" class="header__title">
-        {settings.basic.site_title}
-      </a>
-    )}
-
-    <p class="header__tagline">{settings.basic.site_tagline}</p>
-
-    <div class="menu">
-      <div class="menu__toggle js-menu-toggle">
-        <div class="menu__toggle__icon"><span></span></div>
-      </div>
-      <div class="menu__wrap">
+    <a href="/" class="header__title">{settings.title}</a>
+    <p class="header__tagline">{settings.description}</p>
+    <nav class="menu" aria-label="Main navigation">
+      <button class="menu__toggle" type="button" aria-controls="site-menu" aria-expanded="false" hidden>
+        <span class="sr-only">Menu</span>
+        <span class="menu__toggle__icon" aria-hidden="true"><span></span></span>
+      </button>
+      <div class="menu__wrap" id="site-menu">
         <ul class="menu__list">
           {settings.menu.map((item) => (
             <li class="menu__list__item">
-              <a href={item.url} class="menu__list__item__link">{item.title}</a>
+              <a href={item.url} class="menu__list__item__link" aria-current={currentPath === (item.url.replace(/\/$/, '') || '/') ? 'page' : undefined}>{item.title}</a>
             </li>
           ))}
         </ul>
         <SocialLinks />
       </div>
-    </div>
-
+    </nav>
   </div>
-
 </header>
+
+<script>
+  // Without JavaScript the navigation stays expanded and every link still works.
+  const menu = document.querySelector<HTMLElement>('.menu');
+  const toggle = menu?.querySelector<HTMLButtonElement>('.menu__toggle');
+  if (menu && toggle) {
+    menu.classList.add('menu--enhanced');
+    toggle.hidden = false;
+    const closeMenu = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('menu--open');
+    };
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      menu.classList.toggle('menu--open', open);
+    });
+    menu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+    menu.addEventListener('focusout', (event) => {
+      if (event.relatedTarget instanceof Node && !menu.contains(event.relatedTarget)) closeMenu();
+    });
+    document.addEventListener('click', (event) => {
+      if (event.target instanceof Node && !menu.contains(event.target)) closeMenu();
+    });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', closeMenu);
+    window.addEventListener('pageshow', closeMenu);
+  }
+</script>

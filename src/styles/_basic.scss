@@ -207,7 +207,7 @@ a {
 	@include transition(all 0.15s ease-in-out);
 
 	&:hover {
-		color: $accent-color;
+		color: #216b59;
 	}
 }
 
@@ -219,7 +219,7 @@ a {
 	border: 2px solid $accent-color;
 	border-radius: 3px;
 	background: $accent-color;
-	color: $background-color;
+	color: $text-dark-color;
 	font-weight: $button-weight;
 	letter-spacing: $button-spacing;
 	cursor: pointer;
@@ -232,7 +232,7 @@ a {
 	&:hover {
 		background: color.adjust($accent-color, $hue: 15deg);
 		border-color: color.adjust($accent-color, $hue: 15deg);
-		color: $background-color;
+		color: $text-dark-color;
 	}
 
 	svg {
@@ -271,8 +271,8 @@ a {
 
 	&:hover {
 		background: $accent-color;
-		border-color: $accent-color;
-		color: $background-color;
+		border-color: #216b59;
+		color: $text-dark-color;
 	}
 }
 
@@ -284,7 +284,7 @@ a {
 	&:hover {
 		background: $overlay-text-color;
 		border-color: $overlay-text-color;
-		color: $accent-color;
+		color: #216b59;
 	}
 }
 
@@ -295,8 +295,8 @@ hr {
 	background: $border-color;
 }
 
-::selection 	 { background: $accent-color; color: $background-color; }
-::-moz-selection { background: $accent-color; color: $background-color; }
+::selection 	 { background: $accent-color; color: $text-dark-color; }
+::-moz-selection { background: $accent-color; color: $text-dark-color; }
 
 
 
@@ -335,66 +335,9 @@ hr {
 
 
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Page loading
-
-.page-loader {
-	display: none;
-}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Page layout
 
 .page {
-	@include transition(all 0.4s ease-in-out);
-}
-
-body.loading {
-
-	.loader {
-		opacity: 1;
-		visibility: visible;
-		@include transition(all 0.4s ease-in-out 1s);
-	}
-
-	.page {
-		opacity: 0;
-		visibility: hidden;
-		@include transition(all 0.4s ease-in-out);
-	}
-
-	.footer {
-		opacity: 0;
-		visibility: hidden;
-		@include transition(all 0.4s ease-in-out);
-	}
-}
-
-.loader {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	@include translate(-50%,-50%);
-	width: 60px;
-	height: 15px;
-
-	opacity: 0;
-	visibility: hidden;
-	@include transition(all 0.2s ease-in-out);
-
-	@include mq(tabletl) {
-		left: 65%;
-	}
-
-	@include mq(desktop) {
-		left: 62.5%;
-	}
-
-	svg {
-		width: 100%;
-		height: 100%;
-		fill: rgba($text-dark-color,0.2);
-	}
-}
-
-.page,
-.page__content {
 	float: left;
 	clear: both;
 	width: 100%;
@@ -415,26 +358,6 @@ body.loading {
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Page sections
 
-.featured-image {
-	position: relative;
-	width: 100%;
-	height: 0;
-	padding-bottom: 56.25%;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-
-	@include mq(tabletl) {
-		position: fixed;
-		z-index: 10;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		height: auto;
-		padding-bottom: 0;
-		width: 30%;
-	}
-}
 
 section {
 	margin-top: 40px;
@@ -467,74 +390,5 @@ section {
 
 	@include mq(laptop) {
 
-	}
-}
-
-
-
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Buy CTA
-
-.buy-cta {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-}
-
-.buy-cta__link {
-	display: block;
-	position: relative;
-	width: 40px;
-	height: 40px;
-	background: #dc5b5d;
-
-	@include mq(tabletp) {
-		width: 60px;
-		height: 60px;
-	}
-
-	svg {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 20px;
-		height: 20px;
-		@include translate(-50%,-50%);
-		fill: #fff;
-
-		@include mq(tabletp) {
-			width: 30px;
-			height: 30px;
-		}
-	}
-
-	&:hover {
-
-		.buy-cta__text {
-			@include translate(0,0);
-			opacity: 1;
-		}
-	}
-}
-
-.buy-cta__text {
-	position: absolute;
-	top: 0;
-	right: 40px;
-	background: #dc5b5d;
-	padding: 14px 10px 13px 17px;
-	color: #fff;
-	font-size: 13px;
-	line-height: 1;
-	white-space: nowrap;
-
-	@include transition(all 0.15s ease-in-out);
-	@include translate(0,20px);
-	opacity: 0;
-
-	@include mq(tabletp) {
-		right: 60px;
-		padding: 22px 14px 23px 25px;
-		font-size: 15px;
-		@include translate(0,30px);
 	}
 }

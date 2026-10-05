@@ -1,14 +1,16 @@
 ---
+slug: pixars-evolution
+lang: th
 title: 'Pixar’s Evolution'
 date: 2019-06-26
 categories: [movies]
 tags: [pixar, animation]
-featured_image: /images/blog/keng.blog-pixel-logo-blog-cover.webp
+featured_image: ../../assets/images/blog/keng.blog-pixel-logo-blog-cover.webp
 excerpt: 'เพิ่งดู Toy Story 4 แล้วพบว่าภาพสวยมากเมื่อเทียบกับภาคแรก เลยมาไล่ดูว่า Pixar พยายามทำเทคนิคทาง CG อะไรบ้างในอดีต จนทำให้ภาพในหนังสวยขึ้นเรื่อยๆ'
 ---
 
 <p align="center">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qTPKGVrFtQU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="Pixar’s Evolution — video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/qTPKGVrFtQU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 Pixar เป็นสตูดิโอที่ทดลองเทคนิค CG ในหนังของตัวเองไปเรื่อยๆ ถ้านับตั้งแต่ Toy Story เรื่องแรกตอนปี 1995 ก็จะสังเกตได้ประมาณนี้

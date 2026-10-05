@@ -1,13 +1,15 @@
 ---
+slug: arrowverse
+lang: th
 title: 'Arrowverse'
 date: 2020-11-07
 categories: [series]
 tags: [dc, the flash, arrowverse]
-featured_image: '/images/blog/20201107/2020-11-07-arrowverse-main-cover.webp'
+featured_image: '../../assets/images/blog/20201107/2020-11-07-arrowverse-main-cover.webp'
 excerpt: TV Series ของ DC ที่ไม่เคยคิดจะดู จนกระทั่งจะยกเลิก Netflix
 ---
 
-![](/images/blog/20201107/2020-11-07-arrowverse-blog-cover.webp)
+![ตัวละครจากซีรีส์ Arrowverse](../../assets/images/blog/20201107/2020-11-07-arrowverse-blog-cover.webp)
 
 ช่วง 10 ปีหลัง เรารู้สึกว่า Disney/Marvel จะผูกขาดหนัง super heroes โรงด้วย [Infinity Saga][1] ในขณะที่ทำได้ไม่ดีนักกับ TV Series ที่โดนตัดจบ/ยกเลิก ไปเกือบหมดเพราะต้องยอมพระเจ้าของจักรวาลหลัก
 

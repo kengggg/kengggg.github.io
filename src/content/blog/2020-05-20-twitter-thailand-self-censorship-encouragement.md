@@ -1,9 +1,11 @@
 ---
+slug: twitter-thailand-self-censorship-encouragement
+lang: en
 title: 'Twitter Thailand is trying to encourage self-censorship'
 date: 2020-05-20
 categories: [internet]
 tags: [twitter]
-featured_image: /images/blog/keng.blog_.twitter-thailand@2x.webp
+featured_image: ../../assets/images/blog/keng.blog_.twitter-thailand@2x.webp
 excerpt: 'A note on a possibly self-censorship encouragement from @TwitterThailand'
 ---
 

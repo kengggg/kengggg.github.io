@@ -1,30 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPostCard from '../components/BlogPostCard.astro';
-import { POSTS_PER_PAGE } from '../consts';
+import { settings } from '../data/settings';
 import { fetchPublishedPosts, paginatePosts, sortPostsByDate } from '../utils/posts';
 
 const publishedPosts = await fetchPublishedPosts();
 const sortedPosts = sortPostsByDate(publishedPosts);
-const { posts, totalPages } = paginatePosts(sortedPosts, POSTS_PER_PAGE, 1);
+const { posts, totalPages } = paginatePosts(sortedPosts, settings.postsPerPage, 1);
 const hasNextPage = totalPages > 1;
 ---
 
 <BaseLayout
-  title="Keng Susumpow"
-  description="Random Access Memory."
-  featuredImage="/images/generic/main-cover.webp"
+  title={settings.author}
 >
+  <h1 class="sr-only" lang="en">Latest posts</h1>
   <section class="blog single">
     <div class="wrap">
-      {posts.map((post) => (
-        <BlogPostCard post={post} />
+      {posts.map((post, index) => (
+        <BlogPostCard post={post} eager={index === 0} />
       ))}
     </div>
   </section>
 
   {totalPages > 1 && (
-    <section class="pagination">
+    <nav class="pagination" aria-label="Blog pagination" lang="en">
       {hasNextPage && (
         <div class="pagination__next">
           <a href="/blog/2/" class="button button--large">
@@ -33,6 +32,6 @@ const hasNextPage = totalPages > 1;
           </a>
         </div>
       )}
-    </section>
+    </nav>
   )}
 </BaseLayout>

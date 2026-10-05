@@ -1,9 +1,11 @@
 ---
+slug: ready-player-one
+lang: th
 title: 'Ready Player One'
 date: 2021-01-01
 categories: [book]
 tags: [audible]
-featured_image: '/images/blog/20210101/ready-player-one-blog-cover.webp'
+featured_image: '../../assets/images/blog/20210101/ready-player-one-blog-cover.webp'
 excerpt: ได้ฟังหนังสือจบแล้วดูหนังต่อ เลยได้เปรียบเทียบกันแบบ back-to-back เพื่อที่จะพบว่า Speilberg ทำได้ไม่สุด
 ---
 
@@ -20,7 +22,7 @@ excerpt: ได้ฟังหนังสือจบแล้วดูหน�
 ## หนัง Ready Player One
 
 <p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cSp1dM2Vj48" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="Ready Player One — video" width="560" height="315" src="https://www.youtube.com/embed/cSp1dM2Vj48" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 เห็นโฆษณาหนัง Ready Player One เตะตาเพราะว่ามีตัวละครจากเกม Overwatch ที่ติดมากในตอนนั้นมา แต่ไม่มีโอกาสได้ดู ก็คิดไปว่าเป็นแค่หนัง Spielberg กำกับที่ซื้อลิขสิทธิ์ตัวละครใส่ๆ เข้ามาเพื่อขายของ

@@ -1,9 +1,11 @@
 ---
+slug: what-mozilla-is-doing-in-2019
+lang: th
 title: 'What Mozilla is doing in 2019'
 date: 2019-04-17
 categories: [works]
 tags: [internet, mozilla]
-featured_image: /images/blog/keng.blog-mozilla-logo-blog-cover.webp
+featured_image: ../../assets/images/blog/keng.blog-mozilla-logo-blog-cover.webp
 excerpt: 'หลายปีผ่านมา Mozilla ทำอะไรอยู่บ้าง'
 ---
 
@@ -45,5 +47,5 @@ excerpt: 'หลายปีผ่านมา Mozilla ทำอะไรอย�
 [7]: https://research.mozilla.org/servo-engines/
 [8]: https://research.mozilla.org/webassembly/
 
-[fig1]: /images/blog/keng.blog-firefox-market-share-in-thailand.webp
-[fig2]: /images/blog/keng.blog-firefox-container-logo.webp
+[fig1]: ../../assets/images/blog/keng.blog-firefox-market-share-in-thailand.webp
+[fig2]: ../../assets/images/blog/keng.blog-firefox-container-logo.webp

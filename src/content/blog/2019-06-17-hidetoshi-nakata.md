@@ -1,9 +1,11 @@
 ---
+slug: hidetoshi-nakata
+lang: th
 title: 'Hidetoshi Nakata'
 date: 2019-06-17
 categories: [sports]
 tags: [japan, football]
-featured_image: /images/blog/keng.blog-hidetoshi-nakata.webp
+featured_image: ../../assets/images/blog/keng.blog-hidetoshi-nakata.webp
 excerpt: 'เป็นแฟนคลับเก่าของ Hidetoshi Nakata ก็ต้องมาอัปเดทกันหน่อยว่าทำอะไรอยู่นะ'
 ---
 
