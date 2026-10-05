@@ -84,7 +84,15 @@ npm run test:e2e
 
 On macOS 27, Playwright Firefox can fail before opening a page because of an [upstream app-data permission issue](https://github.com/microsoft/playwright/issues/42768). To check the other engines locally, use `npm run test:e2e -- --project=chromium --project=webkit`. The Linux CI job still runs all three engines.
 
-The GitHub Actions workflow runs these checks on pull requests and pushes to `main`, rejects high/critical dependency advisories, and retains browser evidence on failure. It does not deploy the site. Deploy the complete `dist/` output, including `404.html`; the host must serve that file with a 404 status for unknown routes.
+The GitHub Actions workflow runs these checks on pull requests and pushes to `main`, rejects high/critical dependency advisories, and retains browser evidence on failure.
+
+## GitHub Pages deployment
+
+After all checks pass on `main`, the workflow uploads the verified `dist/` output and deploys it to [GitHub Pages](https://kengggg.github.io/). Pull requests only run checks. You can also run **Site checks** manually from the Actions tab with `main` selected to verify and redeploy the current version. Deployments in progress are allowed to finish when a newer commit arrives.
+
+The repository's **Settings → Pages → Build and deployment → Source** must be **GitHub Actions**. Astro generates the complete site, including `404.html`; publishing the source branch through the legacy Jekyll build does not work. Only the deployment job receives Pages write and identity-token permissions.
+
+The canonical site URL remains `https://patipat.org` in `src/data/settings.ts`. DNS and custom-domain hosting are configured separately from this GitHub Pages deployment.
 
 ## License
 
