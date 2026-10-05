@@ -8,7 +8,7 @@ export const settings = {
   language: 'th',
   favicon: '/images/favicon.ico',
   twitterHandle: '@kengggg',
-  fontUrl: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;600&display=swap',
+  fontUrl: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400;600&display=swap',
   menu: [
     { title: 'Home', url: '/' },
     { title: 'About', url: '/about/' },
